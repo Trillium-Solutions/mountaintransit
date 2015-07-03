@@ -2659,8 +2659,10 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
-i {
-  font-style: normal; }
+
+/* Change 3-July-2015 to remove the italic override */
+ i {
+  font-style: italic; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lato', sans-serif;
