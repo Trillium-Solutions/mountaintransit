@@ -1,0 +1,122 @@
+#generic-route-list {
+	z-index: 9999999;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: white;
+	padding-bottom: 30px;
+	padding-right: 30px;
+	
+
+	ul {
+	
+	i.generic-alert-icon {
+				background-image: url(../images/sprites.png);
+				background-position: -506px 0px;
+				width: 22px;
+				height: 20px;
+				float: right;
+				position: relative;
+				top: 5px;
+				right: 4px;
+			 
+			}
+	
+		li {
+
+			border-radius: 11px;
+			border: 1px solid white;
+			cursor: pointer;
+			font-size: 14px;
+			font-weight: bold;
+			font-style: italic;
+			float: right;
+			clear: right;
+			margin: 4px 0 4px 5px;
+			padding: 0 7px;  
+			letter-spacing: 3px;
+			line-height: 18px;
+			
+			-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.32);
+-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.32);
+box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.32);
+			
+			
+		}
+		
+		 
+		li.hover, li:hover {
+			position: relative;
+			-webkit-box-shadow: inset 0px 0px 16px -0px rgba(255,255,255,1);
+-moz-box-shadow: inset 0px 0px 16px -0px rgba(255,255,255,1);
+box-shadow: inset 0px 0px 16px -0px rgba(255,255,255,1);
+	
+		.hover-dot {
+			position: absolute;
+			top: 5px;
+			left: 0;
+			background: white;
+			border-radius: 6px;
+			height: 35px;
+			width: 4px;
+		}
+		
+		.home-list-hover {
+			position: absolute;
+			right: -14px;
+			top: 4px;
+			background: white;
+			border-radius: 6px;
+			height: 10px;
+			width: 10px;
+		}
+			
+		} 
+	
+	}
+	
+	a:link, a:active, a:hover, a:visited {
+		color: white;
+		text-decoration: none;
+		
+	}
+} 
+
+
+.post-type-archive {
+
+	
+	
+	
+	#generic-route-list {
+	clear: left;
+	position: inherit;
+	bottom: auto;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	right: auto;
+		li {
+			float: left;
+			clear: none;
+			line-height: 23px;
+			margin-bottom: 20px;
+			
+			.generic-route-bottom {
+				border-top: 1px solid rgba(255,255,255,.5);
+				font-size: 12px;
+			}
+			
+			i.generic-alert-icon {
+				background-image: url(../images/sprites.png);
+				background-position: -515px -68px;
+				width: 22px;
+				height: 20px;
+				float: left;
+				position: relative;
+				margin-left: 5px;
+			 
+			}
+		}
+	}
+
+}

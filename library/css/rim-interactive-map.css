@@ -1,0 +1,322 @@
+#rim-page-map-container.mapWidth683 #map-background {
+  width: 683px;
+  margin: 0 auto;
+  background-image: url("../images/rim-map/basemap_683_out.jpg");
+}
+#rim-page-map-container.mapWidth683 #rim-page-map #map_0 {
+  display: none;
+}
+#rim-page-map-container.mapWidth683 #rim-page-map #map_1 {
+  display: none;
+}
+#rim-page-map-container.mapWidth683 #rim-page-map #map_2 {
+  display: none;
+}
+#rim-page-map-container.mapWidth683 #rim-page-map #map_3 {
+  display: none;
+}
+#rim-page-map-container.mapWidth683 #rim-page-map #map_4 {
+  display: none;
+}
+#rim-page-map-container.mapWidth683 #rim-page-map #map_5 {
+  display: none;
+}
+#rim-page-map-container.mapWidth683 #rim-page-map #map_6 {
+  display: inline;
+}
+#rim-page-map-container.mapWidth683 #map-hovers._rim-off-the-mountain {
+  background-image: url("../images/rim-map/rim-off-the-mountain_scale_683_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 65px 67px;
+}
+#rim-page-map-container.mapWidth683 #map-hovers._rim-route-4 {
+  background-image: url("../images/rim-map/rim-route-4_scale_683_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 435px 0px;
+}
+#rim-page-map-container.mapWidth683 #map-hovers._rim-route-2 {
+  background-image: url("../images/rim-map/rim-route-2_scale_683_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 13px 57px;
+}
+#rim-page-map-container.mapWidth683 #map-hovers.dial-a-ride {
+  background-image: url("../images/rim-map/dial-a-ride_scale_683_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 211.3032px 134px;
+}
+#rim-page-map-container.mapWidth761 #map-background {
+  width: 761px;
+  margin: 0 auto;
+  background-image: url("../images/rim-map/basemap_761_out.jpg");
+}
+#rim-page-map-container.mapWidth761 #rim-page-map #map_0 {
+  display: none;
+}
+#rim-page-map-container.mapWidth761 #rim-page-map #map_1 {
+  display: none;
+}
+#rim-page-map-container.mapWidth761 #rim-page-map #map_2 {
+  display: none;
+}
+#rim-page-map-container.mapWidth761 #rim-page-map #map_3 {
+  display: none;
+}
+#rim-page-map-container.mapWidth761 #rim-page-map #map_4 {
+  display: none;
+}
+#rim-page-map-container.mapWidth761 #rim-page-map #map_5 {
+  display: inline;
+}
+#rim-page-map-container.mapWidth761 #rim-page-map #map_6 {
+  display: none;
+}
+#rim-page-map-container.mapWidth761 #map-hovers._rim-off-the-mountain {
+  background-image: url("../images/rim-map/rim-off-the-mountain_scale_761_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 70px 72px;
+}
+#rim-page-map-container.mapWidth761 #map-hovers._rim-route-4 {
+  background-image: url("../images/rim-map/rim-route-4_scale_761_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 497px 0px;
+}
+#rim-page-map-container.mapWidth761 #map-hovers._rim-route-2 {
+  background-image: url("../images/rim-map/rim-route-2_scale_761_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 12px 61px;
+}
+#rim-page-map-container.mapWidth761 #map-hovers.dial-a-ride {
+  background-image: url("../images/rim-map/dial-a-ride_scale_761_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 243.08601px 154px;
+}
+#rim-page-map-container.mapWidth839 #map-background {
+  width: 839px;
+  margin: 0 auto;
+  background-image: url("../images/rim-map/basemap_839_out.jpg");
+}
+#rim-page-map-container.mapWidth839 #rim-page-map #map_0 {
+  display: none;
+}
+#rim-page-map-container.mapWidth839 #rim-page-map #map_1 {
+  display: none;
+}
+#rim-page-map-container.mapWidth839 #rim-page-map #map_2 {
+  display: none;
+}
+#rim-page-map-container.mapWidth839 #rim-page-map #map_3 {
+  display: none;
+}
+#rim-page-map-container.mapWidth839 #rim-page-map #map_4 {
+  display: inline;
+}
+#rim-page-map-container.mapWidth839 #rim-page-map #map_5 {
+  display: none;
+}
+#rim-page-map-container.mapWidth839 #rim-page-map #map_6 {
+  display: none;
+}
+#rim-page-map-container.mapWidth839 #map-hovers._rim-off-the-mountain {
+  background-image: url("../images/rim-map/rim-off-the-mountain_scale_839_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 79px 82px;
+}
+#rim-page-map-container.mapWidth839 #map-hovers._rim-route-4 {
+  background-image: url("../images/rim-map/rim-route-4_scale_839_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 562px 0px;
+}
+#rim-page-map-container.mapWidth839 #map-hovers._rim-route-2 {
+  background-image: url("../images/rim-map/rim-route-2_scale_839_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 14px 69px;
+}
+#rim-page-map-container.mapWidth839 #map-hovers.dial-a-ride {
+  background-image: url("../images/rim-map/dial-a-ride_scale_839_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 274.8688px 174px;
+}
+#rim-page-map-container.mapWidth917 #map-background {
+  width: 917px;
+  margin: 0 auto;
+  background-image: url("../images/rim-map/basemap_917_out.jpg");
+}
+#rim-page-map-container.mapWidth917 #rim-page-map #map_0 {
+  display: none;
+}
+#rim-page-map-container.mapWidth917 #rim-page-map #map_1 {
+  display: none;
+}
+#rim-page-map-container.mapWidth917 #rim-page-map #map_2 {
+  display: none;
+}
+#rim-page-map-container.mapWidth917 #rim-page-map #map_3 {
+  display: inline;
+}
+#rim-page-map-container.mapWidth917 #rim-page-map #map_4 {
+  display: none;
+}
+#rim-page-map-container.mapWidth917 #rim-page-map #map_5 {
+  display: none;
+}
+#rim-page-map-container.mapWidth917 #rim-page-map #map_6 {
+  display: none;
+}
+#rim-page-map-container.mapWidth917 #map-hovers._rim-off-the-mountain {
+  background-image: url("../images/rim-map/rim-off-the-mountain_scale_917_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 89px 91px;
+}
+#rim-page-map-container.mapWidth917 #map-hovers._rim-route-4 {
+  background-image: url("../images/rim-map/rim-route-4_scale_917_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 627px 0px;
+}
+#rim-page-map-container.mapWidth917 #map-hovers._rim-route-2 {
+  background-image: url("../images/rim-map/rim-route-2_scale_917_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 16px 77px;
+}
+#rim-page-map-container.mapWidth917 #map-hovers.dial-a-ride {
+  background-image: url("../images/rim-map/dial-a-ride_scale_917_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 306.6516px 194px;
+}
+#rim-page-map-container.mapWidth995 #map-background {
+  width: 995px;
+  margin: 0 auto;
+  background-image: url("../images/rim-map/basemap_995_out.jpg");
+}
+#rim-page-map-container.mapWidth995 #rim-page-map #map_0 {
+  display: none;
+}
+#rim-page-map-container.mapWidth995 #rim-page-map #map_1 {
+  display: none;
+}
+#rim-page-map-container.mapWidth995 #rim-page-map #map_2 {
+  display: inline;
+}
+#rim-page-map-container.mapWidth995 #rim-page-map #map_3 {
+  display: none;
+}
+#rim-page-map-container.mapWidth995 #rim-page-map #map_4 {
+  display: none;
+}
+#rim-page-map-container.mapWidth995 #rim-page-map #map_5 {
+  display: none;
+}
+#rim-page-map-container.mapWidth995 #rim-page-map #map_6 {
+  display: none;
+}
+#rim-page-map-container.mapWidth995 #map-hovers._rim-off-the-mountain {
+  background-image: url("../images/rim-map/rim-off-the-mountain_scale_995_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 98px 101px;
+}
+#rim-page-map-container.mapWidth995 #map-hovers._rim-route-4 {
+  background-image: url("../images/rim-map/rim-route-4_scale_995_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 692px 0px;
+}
+#rim-page-map-container.mapWidth995 #map-hovers._rim-route-2 {
+  background-image: url("../images/rim-map/rim-route-2_scale_995_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 17px 85px;
+}
+#rim-page-map-container.mapWidth995 #map-hovers.dial-a-ride {
+  background-image: url("../images/rim-map/dial-a-ride_scale_995_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 338.43442px 214px;
+}
+#rim-page-map-container.mapWidth1073 #map-background {
+  width: 1073px;
+  margin: 0 auto;
+  background-image: url("../images/rim-map/basemap_1073_out.jpg");
+}
+#rim-page-map-container.mapWidth1073 #rim-page-map #map_0 {
+  display: none;
+}
+#rim-page-map-container.mapWidth1073 #rim-page-map #map_1 {
+  display: inline;
+}
+#rim-page-map-container.mapWidth1073 #rim-page-map #map_2 {
+  display: none;
+}
+#rim-page-map-container.mapWidth1073 #rim-page-map #map_3 {
+  display: none;
+}
+#rim-page-map-container.mapWidth1073 #rim-page-map #map_4 {
+  display: none;
+}
+#rim-page-map-container.mapWidth1073 #rim-page-map #map_5 {
+  display: none;
+}
+#rim-page-map-container.mapWidth1073 #rim-page-map #map_6 {
+  display: none;
+}
+#rim-page-map-container.mapWidth1073 #map-hovers._rim-off-the-mountain {
+  background-image: url("../images/rim-map/rim-off-the-mountain_scale_1073_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 107px 110px;
+}
+#rim-page-map-container.mapWidth1073 #map-hovers._rim-route-4 {
+  background-image: url("../images/rim-map/rim-route-4_scale_1073_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 757px 0px;
+}
+#rim-page-map-container.mapWidth1073 #map-hovers._rim-route-2 {
+  background-image: url("../images/rim-map/rim-route-2_scale_1073_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 19px 93px;
+}
+#rim-page-map-container.mapWidth1073 #map-hovers.dial-a-ride {
+  background-image: url("../images/rim-map/dial-a-ride_scale_1073_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 370.2172px 234px;
+}
+#rim-page-map-container.mapWidth1151 #map-background {
+  width: 1151px;
+  margin: 0 auto;
+  background-image: url("../images/rim-map/basemap_1151_out.jpg");
+}
+#rim-page-map-container.mapWidth1151 #rim-page-map #map_0 {
+  display: inline;
+}
+#rim-page-map-container.mapWidth1151 #rim-page-map #map_1 {
+  display: none;
+}
+#rim-page-map-container.mapWidth1151 #rim-page-map #map_2 {
+  display: none;
+}
+#rim-page-map-container.mapWidth1151 #rim-page-map #map_3 {
+  display: none;
+}
+#rim-page-map-container.mapWidth1151 #rim-page-map #map_4 {
+  display: none;
+}
+#rim-page-map-container.mapWidth1151 #rim-page-map #map_5 {
+  display: none;
+}
+#rim-page-map-container.mapWidth1151 #rim-page-map #map_6 {
+  display: none;
+}
+#rim-page-map-container.mapWidth1151 #map-hovers._rim-off-the-mountain {
+  background-image: url("../images/rim-map/rim-off-the-mountain_scale_1151_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 117px 120px;
+}
+#rim-page-map-container.mapWidth1151 #map-hovers._rim-route-4 {
+  background-image: url("../images/rim-map/rim-route-4_scale_1151_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 822px 0px;
+}
+#rim-page-map-container.mapWidth1151 #map-hovers._rim-route-2 {
+  background-image: url("../images/rim-map/rim-route-2_scale_1151_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 21px 101px;
+}
+#rim-page-map-container.mapWidth1151 #map-hovers.dial-a-ride {
+  background-image: url("../images/rim-map/dial-a-ride_scale_1151_out.jpg");
+  background-repeat: no-repeat;
+  background-position: 402.0px 255px;
+}
