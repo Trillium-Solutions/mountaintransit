@@ -100,7 +100,7 @@ $term_ids = wp_list_pluck( $terms, 'term_id' );
 											
 										<?php
 											foreach($alert_route_names as &$alert_zone) {
-							
+													echo '<!-- alert zone: '.$alert_zone.' route name: '.strtolower(str_replace(' ','_',get_field('route_medium_name' ) ) ).'-->';
 													if($alert_zone == strtolower(str_replace(' ','_',get_field('route_medium_name' ) ) )) {
 													
 														echo '<i class="generic-alert-icon"></i>';

@@ -2659,11 +2659,10 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
-
-/* Change 3-July-2015 to remove the italic override */
- i {
-  font-style: italic; }
-
+/*
+i {
+	font-style: normal;
+} */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lato', sans-serif;
   letter-spacing: .1em; }
@@ -3163,6 +3162,16 @@ body {
     display: inline-block;
     width: 100%;
     line-height: 30px; }
+
+#social-links-holder {
+  clear: both;
+  margin-left: 5%; }
+  #social-links-holder .facebook-link img {
+    border: 1px solid rgba(255, 255, 255, 0.4); }
+
+#right-secondary-links {
+  float: right;
+  width: 100%; }
 
 i.route-icon-lrg {
   width: 50px;
@@ -3755,7 +3764,11 @@ you can add resource intensive styles.
     display: none; }
 
   #home-desktop-map-container #generic-route-list {
-    display: inherit; } }
+    display: inherit; }
+
+  #right-secondary-links {
+    float: right;
+    width: 23%; } }
 /*********************
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and

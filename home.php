@@ -96,7 +96,11 @@
 								<div id="right-secondary-links" class="secondary-col">
 
 								<?php wp_nav_menu( array( 'theme_location' => 'secondary-link-right-menu' ) ); ?>
-
+								<div id="social-links-holder">
+									<a href="http://www.facebook.com/mountaintransit" class="facebook-link">
+										<img src="<?php echo get_site_url(); ?>/wp-content/themes/mountain/library/images/fb-icons/png/FB-f-Logo__blue_50.png" width="25" />
+									</a>
+								</div><!-- end  id="social-links-holder" -->
 
 						</div><!-- end #right-secondary-links -->
 							

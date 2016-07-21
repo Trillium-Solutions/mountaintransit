@@ -314,8 +314,6 @@ margin-top: 20px;
 #home-secondary-container {
 
  #home-news-area{
-    	
-    	
     	margin-left: 43px;
     	width: 40%;
     	border-right: 1px solid #a83639;
@@ -326,11 +324,8 @@ margin-top: 20px;
 	#how-to-ride-links {
 
 			float: left;
-	
 			margin-left: 43px;
-
 			width: 25%; 
-			
 			border-bottom: 0;
 			border-right: 1px solid #a83639;
 			
@@ -359,4 +354,10 @@ margin-top: 20px;
 	
 	}
 
+}
+
+
+#right-secondary-links{
+    float: right;
+    width: 23%;
 }

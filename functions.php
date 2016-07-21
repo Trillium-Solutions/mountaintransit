@@ -490,7 +490,7 @@ function codex_route_init() {
 		'labels'             => $dar_labels,
 		'public'             => true,
 		'publicly_queryable' => true,
-		'show_ui'            => true,
+		'show_ui'            => false,
 		'show_in_menu'       => true,
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'dial-a-ride' ),
@@ -562,7 +562,7 @@ function codex_route_init() {
 		'labels'             => $labels,
 		'public'             => true,
 		'publicly_queryable' => true,
-		'show_ui'            => true,
+		'show_ui'            => false,
 		'show_in_menu'       => true,
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'road-conditions-and-alerts' ),
@@ -1018,27 +1018,12 @@ add_action('init', 'register_footer_menu');
 
 
 
-function csv_site_update() {
+function tsv_site_update() {
 
-	echo "<h1>Update site with CSV</h1>If you want to update the site, you need to add &update=true to the end of the url.  <br/><strong>DO NOT DO THIS IF YOU ARE UNSURE YOU?RE DOING THE RIGHT THING!!</strong>";
+	echo "<h1>Update site with a TSV (Tab separated values)</h1>If you want to update the site, you need to add &update=true to the end of the url.  <br /> This is found in wp-content/transit-data/route_data.tsv<br/><strong>DO NOT DO THIS IF YOU ARE UNSURE YOU?RE DOING THE RIGHT THING!!</strong>";
 	
 	if($_GET["update"] == "true") {
-		echo "<br />updating... <br />";
-		
-		
-		/*
-		
-		CSV order:
-		
-		
-		
-		
-		
-		
-		*/
-		
-		
-		
+		echo "<br />updated site. <br />";
 		
 		// read in the csv
 		
@@ -1054,31 +1039,67 @@ function csv_site_update() {
 		$existing_timetables = get_posts(array(
 			'numberposts' => -1,
 			'post_type' => 'timetable',
+			
 		));
+		
+		
+		//echo 'number of routes: '.strval(sizeof($existing_routes)).'<br />';
+		
+		
+	if(false){	
+				foreach($existing_routes as &$route) {
+					echo "route  <br />";
+					print_r($route);
+					echo "<br /><br />";
+					 //wp_delete_post( $route->ID, true ); 
+			
+				}
+		
+				foreach($existing_dars as &$dar) {
+					echo "dar !<br />";
+		echo "<br /><br />";
+			
+				}
+		
+				foreach($existing_timetables as &$timetable) {
+					echo "timetable !<br />";
+		echo "<br /><br />"; 
+			
+				}
+		}
+		
+		if(sizeof($existing_routes) >= 7){
+		
+		
+		
+		
+
+		//echo 'number of routes to delete: '.
+ 
 		
 		foreach($existing_routes as &$route) {
 			echo "route delete!<br />";
-			 wp_delete_post( $route->ID, true ); 
-			
-		}
-		
-		foreach($existing_dars as &$dar) {
-			echo "dar delete!<br />";
-			 wp_delete_post( $dar->ID, true ); 
-			
+			 wp_delete_post( $route->ID, true );
+	
 		}
 		
 		foreach($existing_timetables as &$timetable) {
 			echo "timetable delete!<br />";
-			 wp_delete_post( $timetable->ID, true ); 
-			
+			wp_delete_post( $timetable->ID, true );  
+		}
+		
+		
+		foreach($existing_dars as &$dar) {
+			echo "dar delete!<br />";
+			 wp_delete_post( $dar->ID, true ); 		
 		}
 		
 		
 		
-		$handle = fopen(get_site_url()."/wp-content/transit-data/route_dar_data.tsv", "r");
+		
+		$handle = fopen(get_site_url()."/wp-content/transit-data/route_data.tsv", "r");
 		if ($handle) {
-		$lineCount = 0;
+		$lineCount = 0; 
    		 while (($line = fgets($handle)) !== false) {
         	
         	$existing_routes = get_posts(array(
@@ -1162,7 +1183,7 @@ function csv_site_update() {
 			  'post_status'   => 'publish',
 			  'post_type'      => 'route',
 			  'post_author'   => 1
-				);
+			  );
 
 				// Insert the post into the database
 				$post_to_update_id = wp_insert_post( $my_post );
@@ -1174,15 +1195,14 @@ function csv_site_update() {
 				
 					//$handle = fopen(get_site_url()."/wp-content/transit-data/".$timetable, "r");
 					$timetableHTML = file_get_contents(get_site_url()."/wp-content/transit-data/timetables/".$timetable);
-					
-					
+					echo 'html:'.$timetableHTML.'<br />';
 					$my_post = array(
 						  'post_title'    =>   explode('.', $timetable)[0],
 						  'post_name' =>     explode('.', $timetable)[0],
 						  'post_status'   => 'publish',
 						  'post_type'      => 'timetable',
 						  'post_author'   => 1,
-						  'post_content' => $timetableHTML
+						  'post_content' => $timetableHTML 
 					);
 
 					// Insert the post into the database
@@ -1266,13 +1286,14 @@ function csv_site_update() {
 		//update_field($field_key, $value, $post_id)
 		
 		echo "<br>Update complete!";
+		}
 	} 
-
+	
 }
 
 add_action( 'admin_menu', 'add_data_import_menu' );
 function add_data_import_menu() {
-	add_management_page( 'CSV Site Update', 'CSV Site Update', 'manage_options', 'csv-site-update', 'csv_site_update' );
+	add_management_page( 'TSV Site Update', 'TSV Site Update', 'manage_options', 'tsv-site-update', 'tsv_site_update' );
 }
 
 function slugify($text)
@@ -1319,7 +1340,7 @@ function add_route_url_rules($rules) {
   $new_rules = array();
   $new_rules["rim-routes-and-schedules/([^/]+)/?$"] = "index.php?route=".$wp_rewrite->preg_index(1);
   $new_rules["rim-routes-and-schedules/?$"] = "index.php?post_type=route&service_area=rim&meta_key=display_order&orderby=meta_value&order=asc";
-   $new_rules["big-bear-routes-and-schedules/([^/]+)/?$"] = "index.php?route=".$wp_rewrite->preg_index(1);
+  $new_rules["big-bear-routes-and-schedules/([^/]+)/?$"] = "index.php?route=".$wp_rewrite->preg_index(1);
   $new_rules["big-bear-routes-and-schedules/?$"] = "index.php?post_type=route&service_area=big-bear&meta_key=display_order&orderby=meta_value&order=asc";
  return  $new_rules + $rules; 
 }  

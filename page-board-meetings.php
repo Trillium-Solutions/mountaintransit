@@ -5,7 +5,16 @@ Template Name: Board meetings
 
 ?> 
 
-<?php get_header(); ?>
+<?php get_header();
+
+
+	$archive = false;
+	if(isset($_GET['archive'])){
+		if($_GET['archive'] == 'true'){
+			$archive = true;
+		}
+	}
+ ?>
 
 			<?php get_template_part( 'generic-page-top'); ?> 
 			
@@ -32,12 +41,17 @@ Template Name: Board meetings
 					<h1 id="page-title" class="over-blue"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 					
 					
-					<?php } else { ?>
-					<h1 id="page-title" class="over-blue"><?php the_title() ?></h1>
+					<?php } else { 
+					$archive_title = '';
+					if($archive) $archive_title = ' (Archive)<a style="font-size: .4em; text-decoration: underline; float: right;" href="'.get_site_url().'/board-meetings" >	&larr;Back to current year only</a>';
+					?>
+					<h1 id="page-title" class="over-blue"><?php the_title(); echo $archive_title; ?></h1>
 					
-						<?php }  ?>
+						<?php } 
+						
+						
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						 if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -61,6 +75,8 @@ Template Name: Board meetings
 										<div id="page-anchor-links"><ul></ul></div>
 										<?php
 										}
+
+										
 										
 										$args = array(
 												'numberposts' => -1,
@@ -70,6 +86,9 @@ Template Name: Board meetings
 												'posts_per_page' => 100
 												
 											);
+											if(!$archive){
+												$args['year']=date('Y');// gets current year
+											}
  
 											// get results
 											$the_query = new WP_Query( $args );
@@ -120,7 +139,10 @@ echo date_format(new DateTime(get_field('board_meeting_date')),"F j, Y");
 											<?php endif; ?>
  
 											<?php wp_reset_query();
-										
+											
+											if(!$archive){
+												echo '<a href="'.get_site_url().'/board-meetings/?archive=true">See Archive of all Meetings</a>';
+											}
 									 the_content(); 
 
 										/*

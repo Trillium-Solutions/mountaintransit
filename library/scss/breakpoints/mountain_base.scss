@@ -801,3 +801,18 @@ width: 100%;
 
 }
 
+#social-links-holder {
+	clear: both;
+	margin-left: 5%;
+	
+	.facebook-link {
+		img{
+				border: 1px solid rgba(255,255,255,.4);
+		}
+	}
+}
+#right-secondary-links{
+    float: right;
+    width: 100%;
+}
+

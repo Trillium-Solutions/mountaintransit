@@ -111,7 +111,13 @@
 		</style> 
 
 
-
+<style>
+	.postid-1755 {
+		 tbody tr.stop_times_row:first-of-type {
+			height: 80px;
+		}
+	}
+</style>
 		<script>
 
 		
@@ -177,7 +183,7 @@ function googleTranslateElementInit() {
 						
 						
 						<div id="service-phone">
-							<a href="tel:8003232396">Info: 909-878-5200</a>
+							<a href="tel:9098785200">Info: 909-878-5200</a>  
 						</div><!-- end #kern-phone -->
 						
 						

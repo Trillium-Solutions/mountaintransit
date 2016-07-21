@@ -250,7 +250,7 @@ wp_reset_query(); ?>
 											<?php
 											
 											$args = array(
-												'numberposts' => -1,
+												'numberposts' => 1,
 												'post_type' => 'timetable',
 												'meta_key' => 'route_short_name',
 												'meta_value' => get_field( 'route_short_name')
