@@ -40,7 +40,7 @@
 						
 					</div><!-- end #footer-secondary -->
 					<div id="footer-copyright" class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?></div>
-<div id="footer-attributions"><a href="/">Design Attributions</a></div>
+<div id="footer-attributions"><a href="<?php echo get_site_url(); ?>/site-credits">Site Credits</a></div>
 				</div>
 
 			</footer>
