@@ -3,10 +3,7 @@
 Template Name: Routes and Schedules
 */
  get_header(); ?>
-
-			
-<?php get_template_part( 'generic-page-top'); ?> 
-			
+		
 					
 
 						<div id="generic-wide-container">
@@ -42,14 +39,4 @@ Template Name: Routes and Schedules
 						</div><!-- end #generic-wide-container -->
 					
 
-			
-<?php get_template_part( 'generic-page-bottom'); ?> 
-			
-
-
-<?php get_footer(); 
-
-
-
-
-?>
+<?php get_footer();?>

@@ -4,15 +4,6 @@ Template Name: route_individual_page
 */
  get_header(); ?>
  
- <style>
- img.large {
- width:100%;
- 
- }
- 
- </style>
-
-<?php get_template_part( 'generic-page-top'); ?> 
 			
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?> 
 					
@@ -226,7 +217,7 @@ wp_reset_query(); ?>
 											<hr />
 											<ul id="route-anchors">
 												<li><a href="#schedules">Schedules</a></li>
-												<?php if($foundRoutes) { ?><li><a href="#maps">Detail Maps</a></li><?php } ?>
+												<li><a href="#timetable-detail-maps">Interactive Map</a></li>
 												<!--<li><a href="#connections"><?php the_agency_name(); ?> Connections</a></li>-->
 												<!--<li><a href="#external-connections">External Connections</a></li>-->
 												<br style="clear: both;" />
@@ -329,63 +320,19 @@ $the_query = new WP_Query( $args );
 								
 
 </div><!-- #timetable-holder -->
-
-<?php
-
-
-$args = array(
-    'post_type' => 'attachment', 
-    'post_mime_type' =>'image', 
-    'post_status' => 'inherit', 
-    'posts_per_page' => -1, 
-    'meta_key' => 'route_short_names',
-	//'meta_value' => get_field('route_number')
-);
- 
-// get results
-$the_query = new WP_Query( $args );
- 
-// The Loop
-?>
-<?php if( $the_query->have_posts() && $foundRoutes): ?>
-								
-								<div id="timetable-detail-maps">
-								
-								<h2 style=""> 
-											<span class"span-title">Route Detail Maps</span> <span class="span-small-title">(Click a map to expand)</span>
-											<a name="maps"></a>
-											<br style="clear: both;" />
-									</h2>
-									
-									
-							
-
-	<ul>
-	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-		
-		<?php
-		if (strpos(get_field('route_short_names'),$savedRoute) !== false) {
-   ?>
-    
-<li class="route-detail-holder">
-			<span class="min"></span><a class="minimized" href="<?php echo wp_get_attachment_image_src( $attachment_id, 'large' )[0]; ?>"><img class="sml" src="<?php echo wp_get_attachment_thumb_url( $post->ID ); ?>" /></a>
-			<div class="detail-name"><?php 
-				$attachment_meta = wp_prepare_attachment_for_js($post->ID);
-				echo $attachment_meta['title'];
-				?>
-			</div>
-			</li>
-			<?php
-			}?>
-		
-	<?php endwhile; ?>
-	</ul>
-	<br style="clear: both;" />
-	</div><!- end #timetable-detail-maps -->
-<?php endif; ?>
- 
-<?php wp_reset_query(); 
-?>
+<style>
+	iframe {
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+</style> <!-- Hotfix for now -->
+<div id="timetable-detail-maps" style="border: none; background: inherit;  margin-left: 2px; margin-right: 2px;">
+	<h2><span>Interactive Route Map</span> <span class="span-small-title">Showing real-time bus positions</span><div class="map-helper tooltip">?<span class="tooltiptext">Whenever this route is in service, the map will display icons that track the actual positions of buses in realtime. You can click on any stop to see the next estimated arrival times.</span></div><br style="clear:both" /></h2>
+	<div class="map-holder" style="height:450px">
+		<?php get_route_map( get_field('route_long_name') ); ?>
+	</div>
+</div>
 
 			<div class="route-info-box">
 <!--							
@@ -466,15 +413,4 @@ foreach($connectionsSplit as &$connection) {
 							
 						</div><!-- end #generic-wide-container -->
 					
-	
-			
-<?php get_template_part( 'generic-page-bottom'); ?> 
-			
-
-
-<?php get_footer(); 
-
-
-
-
-?>
+<?php get_footer(); ?>
