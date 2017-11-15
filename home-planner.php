@@ -1,168 +1,50 @@
+<?php
+/* Trip planner template */
+?>
 
+    <div id="planner-header">
+		<h1>Plan Your Trip</h1>
+	</div>
+	<div id="planner-body" class="clear">
+		<form name="f" action="http://jump.trilliumtransit.com/redirect.php">
+            <input type="hidden" name="sort" value="walk"/>
+			<div class="form-row">
+                <div class="err-msg" tabindex="-1">Please enter a valid starting address.</div>
+				<label for="saddr">From</label>
+				<input type="text" name="saddr" id="saddr" placeholder="Address, landmark, or intersection" required="required">
+				<button class="crosshair-icon" type="button" value="saddr"><?php echo file_get_contents(get_theme_file_path("library/images/crosshair.svg")); ?><span>Use current location</span></button>
+			</div>
+			<button type="button" class="switch-icon tooltip"><span class="screen-reader-text">Switch Start and End Locations</span><?php echo file_get_contents(get_theme_file_path("library/images/sort.svg")); ?></button>
+			<div class="form-row">
+                <div class="err-msg" tabindex="-1">Please enter a valid destination address.</div>
+				<label for="daddr">To</label>
+				<input type="text" name="daddr" id="daddr" placeholder="Address, landmark, or intersection" required="required">
+				<button class="crosshair-icon" type="button" value="daddr"><?php echo file_get_contents(get_theme_file_path("library/images/crosshair.svg")); ?><span>Use current location</span></button>
+			</div>
+			<div id="default-settings">
+				<div class="form-row clear">
+					<div>Departing: <strong>Now</strong></div>
+					<div>Showing the: <strong>Quickest Trip</strong></div>
+					<button type="button" class="btn btn-default">Edit</button>
+				</div>
+			</div>
+			<div id="additional-settings" class="hidden">
+				<div class="form-row">
+					<select class="form-control" name="ttype">
+						<option value="dep">Leave at</option>
+						<option value="arr">Arrive by</option>
+					</select>
+				</div>
+				<div class="form-row">
+	                <div class="err-msg" tabindex="-1">Please enter a valid time.</div>
+					<label for="ftime" class="obscure screen-reader-text">Time</label>
+					<input type="text" id="ftime" name="time" value="">
+					<label for="fdate" class="obscure screen-reader-text">Date</label>
+					<input type="text" id="fdate" name="date" value="">
+				</div>
+			</div>
 
-
-<!-- THE FOLLOWING CODE GOES IN THE BODY OF THE HTML DOCUMENT WHERE THE TRIP PLANNER FORM SHOULD APPEAR -->
-
-<div id="trip_planner">
-
-<h2>Plan Your Trip</h2>
-
-
-
-<form name="f" action="http://www.trilliumtransit.com/redirect/google_redirect.php"><input type="hidden" name="ie" value="UTF8"/><input type="hidden" name="f" value="d"/>
-    <table>
-        <tr class="min-hide">
-            <td style="font-size:14px;" class="planner-title" ><strong>Start</strong></td>
- </tr>
- 
- <tr class="minimized-visible">
-            <td valign="top"><input  type="text" alt="Start address"  name="saddr" tabindex="1" maxlength="2048" id="saddr" placeholder="Enter your start location"/>
-            <span class="min-hide"><font size="-2">e.g. North D Street, San Bernardino, CA</font></td></span>
-</tr>
-
-<tr class="min-hide">
-<td style="font-size:14px;" class="planner-title" ><strong>End</strong>&nbsp;&nbsp;</td></tr>
-<tr class="min-hide">
-<td><input  type="text" alt="Destination address" placeholder="Enter your destination" name="daddr" id="daddr" tabindex="1" maxlength="2048"/><input type="hidden" name="sll" value="35.372915,-119.018819" />
-<font size="-2">e.g. Bear Valley Community Hospital</font></td></tr> 
-
-
-<tr class="min-hide">
-<td><font size="-1"><input type="radio" id="leave" alt="Leave at" name="ttype" value="dep" checked="checked" tabindex="1"/><label for="leave">Depart at</label> &nbsp;or <input type="radio" alt="Arrive by at" id="arrive" name="ttype" value="arr" tabindex="1"/><label for="arrive">Arrive by</label></font></td></tr>
-<tr class="min-hide">
-<td><font size="-1"><input type="text" alt="Date" id="fdate" size="10" name="date" value="" tabindex="1" maxlength="100"/>  <input type="text" id="ftime" alt="Time" size="10" name="time" value="" tabindex="1" maxlength="100"/></font></td>
-</tr>
-<tr class="min-hide">
-<td valign="top"><input type="submit" value="Get Directions" tabindex="1"/></td>
-</tr>
-<tr >
-<td>
-<span style="font-size:10px;" class="min-hide">
-Read <a href="<?php echo get_site_url()?>/planner-info-and-terms-conditions/">info and terms &amp; conditions</a>.  Trip planning is provided using <a href="http://www.google.com/transit">Google Maps</a>.
-</span>
-</td>
-</tr>
-</table>
-
-<input type="hidden" value="194" name="agency"/>
-
-
-</form>
-
-<script type="text/javascript">
-var thisdate = new Date();
-
-	
- 
-function formatDate(date) { 
-
-
-
-var d = new Date(date); 
-var hh = d.getHours(); 
-var m = d.getMinutes(); 
-var dd = "AM"; 
-var h = hh; 
-if (h >= 12) { 
-h = hh-12; 
-dd = "PM"; 
-} 
-if (h == 0) { 
-h = 12; 
-} 
-m = m<10?"0"+m:m; 
- 
-return h+':'+m+' '+dd 
-}
- 
-document.getElementById('ftime').value=formatDate(thisdate); 
-
-
-var d = new Date(),
-month = d.getMonth() + 1,
-day = d.getDate(),
-year = d.getFullYear();
-
-document.getElementById('fdate').value = month + '/' + day + '/' +  year ;
-
-var format = 'g:i A';
-var step = 1;
-
-function parseTime(time, format, step) {
- 
- var hour, minute, stepMinute,
- defaultFormat = 'g:ia',
- pm = time.match(/p/i) !== null,
- num = time.replace(/[^0-9]/g, '');
- 
- // Parse for hour and minute
- switch(num.length) {
- case 4:
- hour = parseInt(num[0] + num[1], 10);
- minute = parseInt(num[2] + num[3], 10);
- break;
- case 3:
- hour = parseInt(num[0], 10);
- minute = parseInt(num[1] + num[2], 10);
- break;
- case 2:
- case 1:
- hour = parseInt(num[0] + (num[1] || ''), 10);
- minute = 0;
- break;
- default:
- return '';
- }
- 
- if( pm === true && hour > 0 && hour < 12 ) hour += 12;
- 
- if( hour >= 13 && hour <= 23 ) pm = true;
- 
- if( step ) {
- if( step === 0 ) step = 60;
- stepMinute = (Math.round(minute / step) * step) % 60;
- if( stepMinute === 0 && minute >= 30 ) {
- hour++;
- if( hour === 12 || hour === 24 ) pm = !pm;
- }
- minute = stepMinute;
- }
- 
- if( hour <= 0 || hour >= 24 ) hour = 0;
- if( minute < 0 || minute > 59 ) minute = 0;
- 
- return (format || defaultFormat)
-        .replace(/g/g, hour === 0 ? '12' : 'g')
- .replace(/g/g, hour > 12 ? hour - 12 : hour)
- .replace(/G/g, hour)
- .replace(/h/g, hour.toString().length > 1 ? (hour > 12 ? hour - 12 : hour) : '0' + (hour > 12 ? hour - 12 : hour))
- .replace(/H/g, hour.toString().length > 1 ? hour : '0' + hour)
- .replace(/i/g, minute.toString().length > 1 ? minute : '0' + minute)
- .replace(/s/g, '00')
- .replace(/a/g, pm ? 'pm' : 'am')
- .replace(/A/g, pm ? 'PM' : 'AM');
- 
-}
-
-
-function update() {
-    $('#ftime').val(parseTime($('#ftime').val(), format, step));   
-}
-
-$(document).ready( function() {
-    
-    $('#ftime').blur(update);
-
- $(function() {
-    $( "#fdate" ).datepicker({dateFormat: "mm/dd/yy"});
-    
-  });
-    
-
-});
-
-</script>
-
-
-</div>
+			<button type="submit" class="btn btn-default">Get Directions</button>
+		</form>
+	</div>
 

@@ -70,4 +70,14 @@ probably best not to use it. I mean, were you going to anyway? */
 	box-sizing:         $type;
 }
 
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
 
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}

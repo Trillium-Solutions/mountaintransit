@@ -1,57 +1,56 @@
-			</div>
-		</div> <!-- end #content -->
+	</div>
+</div> <!-- end #content -->
 			
-			<footer class="footer" role="contentinfo">
-
-				<div id="inner-footer" class="wrap cf">
-
-					<nav role="navigation">
+<footer class="footer" role="contentinfo">
+	<div id="inner-footer" class="wrap cf">
+		
+		<div id="footer-about">
+			
+			<?php 
+		
+				$about = get_page_by_path( 'about-mountain-transit', OBJECT );
 				
-						
-						<?php wp_nav_menu(array(
-    					'container' => '',                              // remove nav container
-    					'container_class' => 'footer-links cf',         // class of container (should you choose to use it)
-    					'menu' => __( 'Footer Links', 'bonestheme' ),   // nav name
-    					'menu_class' => 'nav footer-nav cf',            // adding custom nav class
-    					'theme_location' => 'footer-links',             // where it's located in the theme
-    					'before' => '',                                 // before the menu
-        			'after' => '',                                  // after the menu
-        			'link_before' => '',                            // before each link
-        			'link_after' => '',                             // after each link
-        			'depth' => 0,                                   // limit the depth of the nav
-    					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
-						)); ?> 
-					
-				
-					</nav>
-
-					<div id="footer-secondary">
-					
-						<?php wp_nav_menu(array(
-    					'container' => '',                              // remove nav container
-    					'container_class' => 'footer-links cf',         // class of container (should you choose to use it)
-    					'menu' => __( 'Footer Links', 'bonestheme' ),   // nav name
-    					'menu_class' => 'nav footer-nav cf',            // adding custom nav class
-    					'theme_location' => 'footer-secondary',             // where it's located in the theme
-    					'before' => '',                                 // before the menu
-        			'after' => '',                                  // after the menu
-        			'link_before' => '',                            // before each link
-        			'link_after' => '',                             // after each link
-        			'depth' => 0,                                   // limit the depth of the nav
-    					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
-						)); ?> 
-						
-					</div><!-- end #footer-secondary -->
-					<div id="footer-copyright" class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?></div>
-<div id="footer-attributions"><a href="<?php echo get_site_url(); ?>/site-credits">Site Credits</a></div>
-				</div>
-
-			</footer>
-
+				if ( isset($about) ) {
+					$excerpt = get_extended( $about->post_content )['main'];
+					echo $excerpt . ' '; 
+					printf( '<a href="%s">Read more about Mountain Transit &raquo;</a>', get_permalink($about->ID) );
+					edit_post_link( 'Edit this text', '<br />', '', $about->ID );
+				}
+			?>
+			
 		</div>
 
-		<?php wp_footer(); ?>
+		<div id="footer-left-menu">
+	
+				<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'depth' => 1 ) ); ?>
+		
+		</div>
+		
+		<div id="footer-right-menu" class="clear">
+			
+			<?php wp_nav_menu( array( 'theme_location' => 'footer-secondary', 'depth' => 1 ) ); ?>
+			
+		</div>
+		
+		<br style="clear:both" />
+		
+		<div id="footer-copyright" class="source-org">
+			
+			&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>
+			
+		</div>
+		
+		<div id="footer-attributions">
+			
+			<a href="<?php echo get_site_url(); ?>/site-credits">Site Credits</a>
+			
+		</div>
+			
+	</div>
 
-	</body>
+</footer>
 
-</html> <!-- end of site. what a ride! -->
+</div> <!-- end #container -->
+<?php wp_footer(); ?>
+</body>
+</html>

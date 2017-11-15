@@ -7,7 +7,7 @@
 			
 					<div id="home-desktop-map-container" class="mapWidth1151"> 
 					
-					<?php get_template_part( 'home-route-list'); ?> 
+					<?php //get_template_part( 'home-route-list'); ?> 
 						
 						<div id="map-background">
 							<div id="map-hovers">

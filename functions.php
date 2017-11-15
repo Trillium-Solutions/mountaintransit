@@ -37,9 +37,6 @@ function bones_ahoy() {
   // launching this stuff after theme setup
   bones_theme_support();
 
-  // adding sidebars to Wordpress (these are created in functions.php)
-  add_action( 'widgets_init', 'bones_register_sidebars' );
-
   // cleaning up random code around images
   add_filter( 'the_content', 'bones_filter_ptags_on_images' );
   // cleaning up excerpt
@@ -92,29 +89,6 @@ function bones_custom_image_sizes( $sizes ) {
     ) );
 }
 
-/*
-The function above adds the ability to use the dropdown menu to select
-the new images sizes you have just created from within the media manager
-when you add media to your content blocks. If you add more image sizes,
-duplicate one of the lines in the array and name it according to your
-new image size.
-*/
-
-/************* ACTIVE SIDEBARS ********************/
-
-// Sidebars & Widgetizes Areas
-function bones_register_sidebars() {
-	register_sidebar(array(
-		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'bonestheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
-	));
-}
-
 /* Enqueue Styles and Scripts */
 function marta_scripts() {
 	wp_enqueue_style( 'googleFonts', 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
@@ -130,10 +104,9 @@ add_action( 'wp_enqueue_scripts', 'marta_scripts' );
 function register_my_menus() {
   register_nav_menus(
     array(
-      'secondary-link-right-menu' 	=> __( 'Secondary Links Right Menu' ),
-	  'footer-menu' 				=> __('Footer Menu'),
-	  'footer-secondary' 			=> __( 'Footer secondary menu' ),
-	  'sidebar-secondary' 			=> __( 'sidebar secondary menu' )
+      'secondary-link-right-menu' 	=> __( 'More Menu Links' ),
+	  'footer-menu' 				=> __( 'Footer Left Menu' ),
+	  'footer-secondary' 			=> __( 'Footer Right Menu' ),
     )
   );
 }
@@ -141,97 +114,30 @@ function register_my_menus() {
 add_action( 'init', 'register_my_menus' );
 
 
-function the_breadcrumb($id = -1) {
+function the_breadcrumb() {
     global $post;
     echo '<ul id="breadcrumbs">';
-   
-    if (!is_home()) {
-        echo '<li><a href="';
-        echo get_option('home');
-        echo '">';
-        echo 'Home';
-        echo '</a></li><li class="separator"> > </li>';
-    	
-    	if(is_archive()) {
-    		$post_type = get_post_type();
-    		
-			if ( $post_type )
-			{
-			
-				$taxonomy = 'alert-zone';
-				$taxonomy_terms = get_terms( $taxonomy, array(
-					'hide_empty' => 0,
-					'fields' => 'ids'
-				) );
-		
-				if(has_term($taxonomy_terms, 'alert-zone')) {
-					
-					echo 'Alerts';
-					
-				}	else {
-				
-					$post_type_data = get_post_type_object( $post_type );
-					$post_type_slug = $post_type_data->rewrite['slug'];
-					echo ucwords(str_replace('-',' ',get_query_var('service_area'))).' '.$post_type_data->label;
-
-				
-				}
+	printf('<li><a href="%s">Home</a></li>', get_site_url() );
+	echo '<li class="separator"> > </li>';
+    if ( is_single() ) {
+		$post_type = get_post_type_object( get_post_type() );
+		printf('<li>%s</li>', $post_type->label );
+		echo '<li class="separator"> > </li>';
+    } elseif ( is_page() ) {
+    	if ( $post->post_parent ) {
+    		$parents = get_post_ancestors( $post->ID );
+			foreach( $parents as $prev ) {
+				printf('<li><a href="%s">%s</a></li>', get_permalink($prev), get_the_title($prev));
+				echo '<li class="separator"> > </li>';
 			}
     	}
-    	
-    	elseif (is_single()) {
-    	
-    		$post_type = get_post_type();
-    		
-			if ( $post_type == 'route')
-			{
-				// need to split this up for rim and big bear
-				
-				if(get_field('pdf_service_area') != "trolley") {
-				$post_type_data = get_post_type_object( $post_type );
-				$post_type_slug = $post_type_data->rewrite['slug'];
-				echo '<li><a href="'.get_site_url().'/'.get_field('pdf_service_area').'-routes-and-schedules/">';
-				 echo ucwords(str_replace('-',' ',get_field('pdf_service_area'))).' '.$post_type_data->label;
-				echo '</a></li>';
-				} else {
-					$post_type_data = get_post_type_object( $post_type );
-					$post_type_slug = $post_type_data->rewrite['slug'];
-					echo '<li><a href="'.get_site_url().'/big-bear-routes-and-schedules/">';
-					 echo ucwords(str_replace('-',' ','big-bear')).' '.$post_type_data->label;
-					echo '</a></li>';
-				}
-				
-			} else {
-			$post_type_data = get_post_type_object( $post_type );
-				$post_type_slug = $post_type_data->rewrite['slug'];
-				echo '<li><a href="'.get_post_type_archive_link( $post_type ).'">';
-				 echo $post_type_data->label;
-				echo '</a></li>';
-			}
-            
-            if (is_single()) {
-            
-                echo '</li><li class="separator"> > </li><li>';
-                if( $post_type_data = get_post_type_object( $post_type )->rewrite['slug'] == 'routes-and-schedules') {
-                
-                	echo 'Route '.get_field('route_number').'&nbsp; : &nbsp;';
-                }
-				
-                the_field('route_medium_name');
-                echo '</li>';
-            }
-        }
-        
-        elseif (is_page()) {
-        	 echo '</li><li>';
-                the_title();
-                echo '</li>';
-        
-        }
-    
-    echo '</ul>';
-    
     }
+	if (get_post_type() == 'route') {
+		printf('<li>%s</li>', marta_route_menu_name($post->ID));
+	} else {
+		printf('<li>%s</li>', get_the_title() );
+	}
+    echo '</ul>';
 }
 
 add_action( 'init', 'codex_route_init' );
@@ -315,6 +221,35 @@ function codex_route_init() {
 	add_image_size( 'transit-page-600', 600, 400, true );
 }
 
+function revcon_change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'News';
+    $submenu['edit.php'][5][0] = 'News';
+    $submenu['edit.php'][10][0] = 'Add News';
+    $submenu['edit.php'][16][0] = 'News Tags';
+}
+function revcon_change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'News';
+    $labels->singular_name = 'News';
+    $labels->add_new = 'Add News';
+    $labels->add_new_item = 'Add News';
+    $labels->edit_item = 'Edit News';
+    $labels->new_item = 'News';
+    $labels->view_item = 'View News';
+    $labels->search_items = 'Search News';
+    $labels->not_found = 'No News found';
+    $labels->not_found_in_trash = 'No News found in Trash';
+    $labels->all_items = 'All News';
+    $labels->menu_name = 'News';
+    $labels->name_admin_bar = 'News';
+}
+ 
+add_action( 'admin_menu', 'revcon_change_post_label' );
+add_action( 'init', 'revcon_change_post_object' );
+
 function slugify($text)
 {
     // Swap out Non "Letters" with a -
@@ -360,4 +295,91 @@ function get_route_map( $long_name ) {
 	$route = rawurlencode( $long_name );
 	$url = $base_url . $route;
 	printf('<iframe src="%s"></iframe>', $url);	
+}
+
+function marta_organized_routes() {
+	if ( !post_type_exists( 'route' ) ) {
+		return;
+	}
+	echo '<ul class="grouped-route-list">';
+	// Echo an organized menu
+	$args = array(
+		'post_type' 	=> 'route',
+		'numberposts'	=> -1,
+		'meta_key'		=> 'route_sort_order',
+		'orderby'		=> array('meta_value_num' => 'ASC'),
+	);
+	$all_routes = get_posts( $args );
+	$sorted_routes = array();
+	foreach( $all_routes as $route ) {
+		$group = get_field( 'route_group', $route->ID );
+		if ( ! array_key_exists( $group, $sorted_routes ) ) {
+			$sorted_routes[$group] = array();
+		} 
+		$sorted_routes[$group][] = $route;
+	}
+	foreach ( $sorted_routes as $group => $routes ) {
+		printf('<li class="route_group"><div class="submenu-title">%s</div><ul>', $group );
+		foreach ( $routes as $route ) {
+			printf('<li class="route-%s"><a href="%s">%s %s</a></li>',
+				get_post_meta( $route->ID, 'route_id', true),
+				get_the_permalink($route->ID),
+				get_route_circle($route->ID, "small"),
+				get_post_meta($route->ID, 'route_long_name', true)
+		    );
+		}
+		echo '</ul></li>';
+	}
+	echo '<li class="route_group dar"><div class="submenu-title">Dial-a-Ride</div><ul><li class="route"><a href="big-bear-dial-a-ride/">Big Bear Valley</a></li><li class="route"><a href="rim-area-dial-a-ride/">RIM Area</a></li></ul></li>';
+	echo '</ul>';
+}
+
+function marta_custom_route_title() {
+	global $post;
+	$short_name = get_post_meta( $post->ID, 'route_short_name', true);
+	$long_name = get_post_meta( $post->ID, 'route_long_name', true);
+	$color = '#' . get_post_meta( $post->ID, 'route_color', true);
+	$text = '#' . get_post_meta( $post->ID, 'route_text_color', true);
+	$region = get_field('route_group', $post->ID);
+	$days = get_field('days_of_week', $post->ID);
+	echo '<header class="hentry">';
+	printf('<h1 style="background-color:%s; color:%s;" class="route-title">%s</h1>', $color, $text, marta_route_menu_name($post->ID) );
+	
+	if ( !empty( $short_name) ) {
+		printf('<p class="subtitle">%s</p>', $long_name);
+	}
+	printf('<p class="route-meta">%s</p>', $days);
+	echo '</header>';
+}
+
+function marta_route_menu_name( $id ) {
+	$short_name = get_post_meta( $id, 'route_short_name', true);
+	$long_name = get_post_meta( $id, 'route_long_name', true);
+	$custom_name = get_post_meta( $id, 'route_custom_name', true);
+	$region = get_field('route_group', $id);
+	if ( !empty( $custom_name ) ) {
+		return $custom_name;
+	} elseif ( empty( $short_name) ) {
+		return $long_name;
+	} else {
+		return $region . ' Route ' . $short_name;
+	}
+}
+
+function marta_route_select() {
+	echo '<div id="route-select-dropdown">';
+	echo '<button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">';
+	echo 'View a different route <span class="triangle-down"></span></button>';
+	echo '<ul class="dropdown-menu">';
+	$args = array(
+		'numberposts'	=> -1,
+		'post_type'		=> 'route',
+		'meta_key'		=> 'route_sort_order',
+		'orderby'		=> array('meta_value_num' => 'ASC'),
+	);
+	$routes = get_posts( $args );
+	foreach ( $routes as $route ) {
+		printf('<li><a href="%s" style="background-color: #%s">%s</a></li>', get_the_permalink($route->ID), get_post_meta($route->ID, 'route_color', true), marta_route_menu_name($route->ID) );
+	}
+	echo '</ul></div>';
 }
