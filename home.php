@@ -1,118 +1,74 @@
 <?php get_header(); ?>
-					
-				<div id="mobile-planner-container">
-				
-				
-				</div><!-- end #mobile-planner-container -->
 			
-					<div id="home-desktop-map-container" class="mapWidth1151"> 
-					
-					<?php //get_template_part( 'home-route-list'); ?> 
-						
-						<div id="map-background">
-							<div id="map-hovers">
-								<?php get_template_part( 'mapAreaCoords'); ?> 
-							</div><!-- end #map-hovers -->
-						</div> <!-- end #map-background -->
-						
-					<div id="planner-wrap">
-						<div id="trip-planner-container" class="minimized">
-							<?php get_template_part( 'home-planner'); ?> 
-						
+	<div id="main" role="main">
 		
-						</div> <!-- end #trip-planner-container -->
-						<div id="planner-expand-contract-tab" class="minimized">expand</div>
-						</div><!-- end #planner-wrap -->
-						
-						<div id="drop-down-info-text-wrap">
-							&#9660; Click a route for details
-						</div><!-- end #drop-down-info-text -->
-						
-						
-						
-						
-						
-					</div><!-- end #home-desktop-map-container -->
-
-						<div id="home-secondary-container">
-						
-						<?php get_template_part( 'home-route-list-mobile'); ?> 
-						
-							<div id="secondard-links-row" >
-								
-								<div id="how-to-ride-links" class="secondary-col">
-								<?php get_template_part( 'secondary-icon-links'); ?> 
-								
-								
-								
-								</div><!-- end #how-to-ride-links -->
-							
-						<div id="home-news-area" class="secondary-col" >
-						<h2>News</h2>
-						<?php
-							
-								
-							$query = new WP_Query(array(
-							'posts_per_page' => 3,
-							"post_type"=>"news", 
-								
-
-							));
-
-						
-						
-								if ( $query->have_posts() ) {
-									?>
-									<ul>
-									<?php
-									
-										while ( $query->have_posts() ) {
-											$query->the_post();
-											
-											?>
-												<li class="home-news-outer" >
-													 <a href="<?php the_permalink(); ?>" class="home-news-inner">
-									   
-														 <i></i> <?php the_title(); ?>
-										 
-													 </a>
-												</li>	
-											
-										<?php
-										}
-										?>
-										</ul>
-										<?php
-									}  
-							wp_reset_postdata();
-							?>
-						
-						<div id="home-more-news"><a href="./news">See More News >></a></div>
-						
-					</div> <!-- end #home-news-area -->
-								<div id="right-secondary-links" class="secondary-col">
-
-								<?php wp_nav_menu( array( 'theme_location' => 'secondary-link-right-menu' ) ); ?>
-								<div id="social-links-holder">
-									<a href="http://www.facebook.com/mountaintransit" class="facebook-link">
-										<img src="<?php echo get_site_url(); ?>/wp-content/themes/mountain/library/images/fb-icons/png/FB-f-Logo__blue_50.png" width="25" />
-									</a>
-								</div><!-- end  id="social-links-holder" -->
-
-						</div><!-- end #right-secondary-links -->
-							
-							</div> <!-- end #secondary-links-row -->
-							<br style="clear: both;" />
-														<div id="home-description-of-services">
-														<?php $about_page = get_page_by_title( 'home_about' );
-														
-														$content = get_post_field('post_content', $about_page->ID); 
-														echo $content;
-														?>
-							<a href="<?php echo get_permalink( 134); ?>" >More About <?php the_agency_name();?></a>
-							</div> <!-- end #home-description-of-services -->
-						
-						
-						</div><!-- end #home-secondary-container -->
+		<?php the_breadcrumb(); ?>
+		
+		<h1 id="page-title">News</h1>
+		
+		<?php while (have_posts()) : the_post(); ?>
+			
+		<article>
+			<h2 class="entry-title">
+				<a href="<?php the_permalink(); ?>">
+				
+					<?php the_title() ?>
 					
+				</a>
+			</h2>
+			
+			<div class="entry-meta">
+				
+				Posted on: <?php the_time('F j, Y') ?>
+				
+			</div><!-- .entry-meta -->
+			<section class="entry-content clear" itemprop="articleBody">
+				
+				<?php if( has_post_thumbnail()) : ?>
+					<div id="featured-image-container">
+						<img class="featured-image" src="
+							<?php
+									
+							$thumb_id = get_post_thumbnail_id();
+							$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'medium', true);
+							echo $thumb_url_array[0];
+									
+							?>
+						">
+					</div><!-- end featured image -->
+				<?php endif; ?>
+									
+				<?php the_content(); ?>
+
+			</section>
+			
+			<?php if ( get_edit_post_link() ) : ?>
+				<footer class="entry-footer">
+					<?php
+						edit_post_link(
+							sprintf(
+								/* translators: %s: Name of current post */
+								esc_html__( 'Edit %s', 'marta' ),
+								the_title( '<span class="screen-reader-text">"', '"</span>', false )
+							),
+							'<span class="edit-link">',
+							'</span>'
+						);
+					?>
+				</footer><!-- .entry-footer -->
+			<?php endif; ?> 
+			
+		</article>
+
+	<?php endwhile;  ?>
+	
+	<?php the_posts_navigation( array(
+	'prev_text'	=> '&laquo; Older posts',
+	'next_text'	=> 'Newer posts &raquo;',
+	)); ?>
+
+</div> <!-- end #main -->
+
+<?php get_template_part('page-footer'); ?>
+
 <?php get_footer(); ?>

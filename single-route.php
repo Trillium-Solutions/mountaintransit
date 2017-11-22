@@ -20,10 +20,12 @@ Template Name: route_individual_page
 			
 			<div class="top-links">
 				<div id="pdf-link">
-					<a>Route Guide PDF (1.5mb) &darr;</a>
+					<a href="<?php the_field('schedule_pdf') ?>">
+						Route Guide PDF (1.5mb) &darr;
+					</a>
 				</div>
 				<div id="route-fares-link">
-					<a>Fares Table &raquo;</a>
+					<a href="#fares">Fares Table &raquo;</a>
 				</div>
 			</div>
 			
@@ -37,14 +39,14 @@ Template Name: route_individual_page
 				
 				<div id="map-header">
 					<h3>Interactive Route Map <div class="map-helper tooltip">How to read (?)<span class="tooltiptext">Whenever this route is in service, the map will display icons that track the actual positions of buses in realtime. You can click on any stop to see the next estimated arrival times.</span></div></h3>
-					<button id="map-expand">
+					<button id="map-expand" class="hidden">
 						Expand map &hArr;
 					</button>
 				</div>
 				
 				<div id="map-holder">
 					
-					<?php get_route_map( get_post_meta(get_the_ID(), 'route_long_name', true) ) ?>
+					<?php get_route_map( get_the_ID() ) ?>
 					
 				</div>
 				
@@ -52,13 +54,36 @@ Template Name: route_individual_page
 			
 			<div id="timetables">
 				
+				<div id="timetable-buttons">
+					<div>
+						<div class="caption">Direction</div>
+						<div class="button-group dir" aria-label="timetable direction">
+							<!-- Autofilled by Javascript -->
+						</div>
+					</div>
+					
+					<div>
+						<div class="caption">Days</div>
+						<div class="button-group days" aria-label="timetable day">
+							<!-- Autofilled by Javascript -->
+						</div>
+					</div>
+				</div>
+				
 				<?php the_timetables(); ?>
 				
 			</div>
 			
 			<!-- insert fares tables into routes? -->
+			<div id="fare-table">
+				<h3 id="fares">Fares</h3>
+				<?php the_field('associated_fare_table'); ?>
+				<a href="fares-and-tickets/#passes">See day pass and punch-pass prices &raquo;</a>
+			</div>
 		</div> <!-- end #main -->
 					
 	<?php endwhile; ?>
+	
+	<?php get_template_part('page-footer'); ?>
 					
 <?php get_footer(); ?>

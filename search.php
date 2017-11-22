@@ -1,71 +1,91 @@
 <?php get_header(); ?>
-<?php get_template_part( 'generic-page-top'); ?> 
-			<div id="content">
+			
+	<div id="main" role="main">
+		
+		<?php the_breadcrumb(); ?>
+		
+		<h1 id="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'marta' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			
+		<?php if (have_posts()) : ?>
+		
+		<?php while (have_posts()) : the_post(); ?>
+			
+		<article>
+			<h2 class="entry-title">
+				<a href="<?php the_permalink(); ?>">
+				
+					<?php $post_type = get_post_type_object( get_post_type() );
+				echo $post_type->label . ': ';
+				the_title();  ?>
+					
+				</a>
+			</h2>
+			
+			<div class="entry-meta">
+				
+				Posted on: <?php the_time('F j, Y') ?>
+				
+			</div><!-- .entry-meta -->
+			<section class="entry-content clear" itemprop="articleBody">
+				
+				<?php if( has_post_thumbnail()) : ?>
+					<div id="featured-image-container">
+						<img class="featured-image" src="
+							<?php
+									
+							$thumb_id = get_post_thumbnail_id();
+							$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'medium', true);
+							echo $thumb_url_array[0];
+									
+							?>
+						">
+					</div><!-- end featured image -->
+				<?php endif; ?>
+									
+				<?php the_content(); ?>
 
-				<div id="inner-content" class="wrap cf">
+			</section>
+			
+			<?php if ( get_edit_post_link() ) : ?>
+				<footer class="entry-footer">
+					<?php
+						edit_post_link(
+							sprintf(
+								/* translators: %s: Name of current post */
+								esc_html__( 'Edit %s', 'marta' ),
+								the_title( '<span class="screen-reader-text">"', '"</span>', false )
+							),
+							'<span class="edit-link">',
+							'</span>'
+						);
+					?>
+				</footer><!-- .entry-footer -->
+			<?php endif; ?> 
+			
+		</article>
 
-					<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
-						
+	<?php endwhile;  ?>
+	
+	<?php the_posts_navigation( array(
+	'prev_text'	=> '&laquo; Older posts',
+	'next_text'	=> 'Newer posts &raquo;',
+	)); ?>
+	
+	<?php else : ?>
+		
+		<article>
+			<h2 class="entry-title">No Results Found</h2>
+			<section class="entry-content clear" itemprop="articleBody">
+				<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords or use the links below', 'marta' ); ?></p>
+				<?php get_search_form(); ?>
+				<?php wp_list_pages(); ?>
+			</section>
+		</article>
+		
+	<?php endif; ?>
 
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+</div> <!-- end #main -->
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
-
-								<header class="article-header">
-
-									<h3 class="search-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-
-                 <!-- <p class="byline vcard">
-                    <?php printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
-                  </p> -->
-
-								</header>
-
-								<section class="entry-content">
-										<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'bonestheme' ) . '</span>' ); ?>
-
-								</section>
-
-								<footer class="article-footer">
-
-                 <!-- <?php printf( __( 'Filed under: %1$s', 'bonestheme' ), get_the_category_list(', ') ); ?> -->
-
-                  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
-								</footer> <!-- end article footer -->
-
-							</article>
-
-						<?php endwhile; ?>
-
-								<?php bones_page_navi(); ?>
-
-							<?php else : ?>
-
-									<article id="post-not-found" class="hentry cf">
-										<header class="article-header">
-											<h1><?php _e( 'Sorry, No Results.', 'bonestheme' ); ?></h1>
-										</header>
-										<section class="entry-content">
-											<p><?php _e( 'Try your search again.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the search.php template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
-
-						</div>
-
-							<div id="sidebar1" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
-
-						<?php get_template_part( 'generic-sidebar'); ?> 
-						</div>
-
-					</div>
-
-			</div>
-			<?php get_template_part( 'generic-page-bottom'); ?> 
+<?php get_template_part('page-footer'); ?>
 
 <?php get_footer(); ?>

@@ -103,6 +103,6 @@
 				</div>
 
 			</div>
-			<?php get_template_part( 'generic-page-bottom'); ?> 
+			<?php get_template_part('page-footer'); ?>
 
 <?php get_footer(); ?>

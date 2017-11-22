@@ -11,13 +11,36 @@
 	</div><!-- end #planner-wrap -->
 	
 	<div id="map-wrap" class="mobile-hide">
-		<!-- <iframe src="https://marta.doublemap.com/map/embed?key=s3283xKQfwfunfcNPM2KJPNBwo0X17Zt&inactive=true"></iframe> -->
+		
+		<?php
+		$svg = file_get_contents(get_theme_file_path('library/images/edt-map.svg'));
+		echo $svg;
+		?>
+		
+		<div id="route-legend">
+			
+			<?php
+			$rquery = get_posts(array(
+				'post_type' => 'route',
+				'numberposts' => -1,
+				'orderby' => 'meta_value_num',
+				'meta_key' => 'route_sort_order',
+				'order' => 'ASC',
+				'post__not_in' => array(6437, 6439),
+				
+			));
+			foreach($rquery as $route) {
+				echo marta_name_link(null, $route->ID);
+			}
+			?>
+			
+		</div>
 	</div>
 	
 		<a href="interactive-system-map/" class="mobile-only home-map-link">Interactive System Map &rarr;</a>
 	
 	<div id="alerts-wrap">
-		<?php tcp_do_alerts( array('collapse' => 'false' ) ); ?>
+		<?php tcp_do_alerts( array('collapse' => 'false', 'sep_affected' => ' ' ) ); ?>
 	</div>
 
 </div><!-- end #home-desktop-map-container -->
@@ -54,7 +77,7 @@
 		<h3>Sign up to receive news and alert updates</h3>
 		<form>
 			<div class="form-row">
-				<input type="email" id="email_addr" placeholder="Your e-mail address">
+				<input type="email" id="email_addr" placeholder="Coming Soon!" disabled>
 				<button type="submit">Subscribe</button>
 			</div>
 		</form>

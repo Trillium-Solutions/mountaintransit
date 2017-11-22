@@ -541,10 +541,6 @@ i.route-icon {
 	}
 }
 
-#featured-image-container {
-	width: 100%;
-}
-
 .single-timetable #generic-wide-container {
 	text-align: left;
 	
@@ -788,20 +784,24 @@ i.route-icon {
 		flex-wrap: wrap;
 	}
 	
-	.hentry {
+	.page-header {
 		margin-bottom: 1rem;
+		margin-top: 1.5rem;
+		
 		h1 {
 			display: inline-block;
 			border-radius: 44px;
 			padding: 0 1rem;
 		}
+		
 		.subtitle {
 			font-size: 1.25rem;
 			margin-bottom: 0;
 			line-height: 1.1;
 		}
 		.route-meta {
-			margin: 0;
+			margin-top: 0.5rem;
+			font-style: italic;
 		}
 	}
 	.top-links {
@@ -809,7 +809,7 @@ i.route-icon {
 		justify-content: center;
 		flex-wrap: wrap;
 		
-		#pdf-link {
+		#pdf-link, #route-fares-link {
 			margin: 6px 8px;
 		}
 	}
@@ -847,7 +847,7 @@ i.route-icon {
 		}
 	}
 	#interactive-map {
-		padding: 2rem 0;
+		margin: 2rem 0;
 	}
 	#map-holder {
 		height: 70vh;
@@ -861,5 +861,225 @@ i.route-icon {
 	.tcp_alerts .container {
 		background-image: none;
 	}
+	#fares {
+		font-size: 1.5rem;
+		margin-top: 2rem;
+		margin-bottom: 0.5rem;
+	}
+	h2.tablepress-table-name {
+		display: none;
+	}
+	.tablepress {
+		margin-bottom: 0;
+	}
+	#fare-table {
+		margin-bottom: 1rem;
+		caption {
+			display: none;
+		}
+	}
 }
+
+.single-alert, .post-type-archive-alert {
+	.entry-title {
+		border: 2px solid darken(#fef200, 5%);
+		background: #fef200;
+		padding: 0.5rem;
+	}
+	.entry-meta {
+		text-transform: uppercase;
+	}
+	.road-conditions {
+		background: rgba(255,255,200,0.2);
+		border: 1px solid rgba(0,0,0,0.2);
+		h3 {
+			margin-top: 0;
+			font-weight: bold;
+			padding-bottom: 0.5rem;
+			border-bottom: 1px solid rgba(0,0,0,0.5);
+		}
+	}
+}
+
+.rte-btn-link {
+	text-decoration: none;
+}
+
+.tcp_alerts, .affected_routes {
+	.rte-btn-link {
+		padding: 0.25rem 0.5rem;
+		border-radius: 14px;
+		display: inline-block;
+		margin: 4px 0;
+		font-size: 14px;
+	}
+}
+
+// Timetables
+
+table {
+	margin: 0;
+	max-width: 100%;
+	border: 1px solid #fff;
+	border-spacing: 0;
+	border-collapse: collapse;
+	color: #000;
+	
+}
+
+table th, table td {
+	padding: 8px;
+	border: 1px solid #fff;
+	text-align: center;
+	font-size: 0.95rem;
+}
+
+tbody th {
+	text-align: left;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #fff;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #fff;
+}
+
+.table-responsive .table > tbody > tr > th,
+.table-responsive .table > tbody > tr > td {
+  white-space: nowrap;
+}
+
+.timetable-holder table > thead > tr > th:first-of-type {
+	color: #fff;
+	background-color: #fff;
+}
+ 
+#timetables{
+	h1.timetable-page-label,
+	h2.description,
+	.service-notes,
+	.sr-only,
+	thead,
+	.timetable-holder h2,
+	.timetable-holder .subtitle {
+		display: none;
+	}
+	.table-container {
+		max-width: 100%;
+		overflow-x: auto;
+		border-left: 3px solid darken(#f5f2ee, 11%);
+		border-right: 3px solid darken(#f5f2ee, 11%);
+		border-top: 3px solid darken(#f5f2ee, 11%);
+		
+		tbody th,
+		tbody td {
+			white-space: nowrap;
+		}
+	}
+	
+	.timetable-bottom {
+		padding: 1rem;
+		margin: 0;
+		font-size: 0.85rem;
+		background: #f5f2ee;
+		border-left: 3px solid darken(#f5f2ee, 11%);
+		border-right: 3px solid darken(#f5f2ee, 11%);
+		border-bottom: 3px solid darken(#f5f2ee, 11%);
+	}
+	
+	table {
+		width: 100%;
+	}
+	
+	table,
+	table th,
+	table td {
+		border: 1px solid darken(#f5f2ee, 3%);
+	}
+	.subtitle {
+		font-size: 1rem;
+		font-weight: bold;
+		margin: 0 0 1rem;
+	}
+	
+	tr:hover {
+		background: lighten(#e7d1d1, 4%);
+	}
+	
+	#timetable-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		
+		.button-group.dir {
+			margin-right: 2rem;
+			margin-bottom: 1rem;
+		}
+		
+		.caption {
+			font-weight: bold;
+		}
+		
+		button {
+			font-size: 1.1rem;
+			background: #e7d1d1;
+			border: 1px solid darken(#e7d1d1, 8%);
+			color: #333;
+			padding: 0.25rem 1rem;
+		}
+		button.active {
+			background: #8b0a0d;
+			color: #fff;
+			box-shadow: inset 1px 1px 3px 0 rgba(0,0,0,0.9);
+		}
+		button:hover {
+			background: darken(#e7d1d1, 8%);
+			color: #000;
+		}
+		button.active:hover {
+			background: #8b0a0d;
+			color: #fff;
+		}
+	}
+	.fixed-column {
+		position: absolute;
+		width: auto;
+		display: none;
+		border: none;
+	}
+	
+	.stop-time.pm {
+		font-weight: bold;
+	}
+	table th {
+		border-right: none;
+		background: lighten(#f5f2ee, 3%);
+	}
+}
+
+.page-template-page-board-meetings {
+	form {
+		display: flex;
+		align-items: center;
+		select {
+			margin: 0 12px;
+			height: 24px;
+			width: 100px;
+			line-height: 1;
+		}
+	}
+}
+
+.page-template-interactive-map-template {
+	#inner-content {
+		max-width: 100%;
+		height: 90vh;
+	}
+	iframe {
+		width: 100%;
+		height: 100%;
+	}
+	
+}
+
 

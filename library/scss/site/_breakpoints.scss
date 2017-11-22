@@ -98,33 +98,110 @@
 			#pdf-link {
 				margin: 0 1.5rem 0 0;
 			}
+			#route-fares-link {
+				margin: 0;
+			}
+		}
+		#timetables .fixed-column {
+			display: table;
 		}
 	}
 	
 	#home-desktop-map-container {
-		min-height: 470px;
 		#planner-wrap {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			width: 333px;
+			#planner {
+				max-width: 100%;
+			}
+			#planner-header {
+				padding: 0.5rem 1rem;
+				background: #af0f0f;
+				margin-bottom: 1rem;
+			}
+			h1 {
+				text-align: left;
+				border: none;
+				padding: 0;
+				background: transparent;
+			}
+			form {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.form-row {
+				margin-bottom: 1rem;
+				min-width: 300px;
+				width: 48%;
+			}
+			#default-settings {
+				margin-bottom: 0;
+				padding: 0.5rem;
+				.form-row {
+					width: 100%;
+					margin: 0;
+					& > div {
+						float: left;
+						min-width: 51%;
+					}
+				}
+			}
+			button[type="submit"] {
+				width: auto;
+				background: #ef6822;
+				border: 2px solid #fad3bf;
+				box-shadow: none;
+				transition: background 0.2s linear;
+				
+				&:hover {
+					background: darken(#ef6822, 12%);
+				}
+			}
+			#additional-settings {
+				flex: 1;
+				display: flex;
+				
+				.form-row {
+					width: auto;
+					min-width: 130px;
+					margin: 0;
+					margin-right: 1rem;
+				}
+				&.hidden {
+					display: none;
+				}
+				
+				select {
+					margin: 0;
+				}
+			}
 		}
 		#map-wrap {
-			iframe {
-				width: 100%;
-				height: 100%;
-				border: inset 2px #c67b75;
+			padding: 1rem;
+			width: 100%;
+			position: relative;
+			
+			#hovers {
+				cursor: pointer;
 			}
-			background-image: url("library/images/map/basemap_995_out.jpg");
-			background-size: contain;
-			max-height: 383px;
-			height: 37vw;
-			margin-left: 333px;
-			border: 12px solid #9e524c;
-			background-repeat: no-repeat;
+		}
+		#route-legend {
+			bottom: 1.5rem;
+			position: absolute;
+			right: 1.5rem;
+			width: 200px;
+			a {
+				margin-bottom: 0.25rem;
+				border: 1px solid #fff;
+				display: block;
+				font-size: 0.85rem;
+				text-align: center;
+				border-radius: 14px;
+			}
+			
 		}
 		#alerts-wrap {
-			margin-left: 333px;
+			
 		}
 	}
 	#home-news-area,
@@ -152,6 +229,9 @@
 }
 
 @media (min-width: 1030px) {
+	body {
+		background-size: cover;
+	}
 	#logo {
 		position: static;
 		background-image: url("library/images/sprites.png");
@@ -174,6 +254,13 @@
 	.footer {
 		margin-top: 2rem;
 	}
+	
+	#home-desktop-map-container #route-legend {
+		width: 260px;
+		a {
+			font-size: 1rem;
+		}
+	}
 }
 
 // The only max-width query...
@@ -187,5 +274,9 @@
 	}
 	#search-wrap input#s {
 		width: 160px;
+	}
+	h1 {
+		font-size: 2rem;
+		line-height: 1.2;
 	}
 }

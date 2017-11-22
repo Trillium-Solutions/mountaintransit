@@ -1,10 +1,4 @@
-<?php
-/*
-Template Name: Dial-A-Ride page
-*/
-
-
-get_header(); ?>
+<?php get_header(); ?>
 			
 	<div id="main" role="main">
 		
@@ -13,7 +7,30 @@ get_header(); ?>
 			<?php the_breadcrumb(); ?>
 			
 		<article class="clear">
-			<h1 id="page-title"><?php the_title() ?></h1>
+			<h1 id="page-title" class="entry-title">
+				Alert: <?php the_title(); ?>
+			</h1>
+			
+			<?php
+			$dates = tcp_get_alert_dates();
+			$affected = tcp_get_affected( get_the_ID(), ' ');
+			?>
+			
+			<div class="entry-meta">
+				
+				<?php echo $dates; ?>
+				
+			</div>
+			
+			<?php if (!empty($affected) ) : ?>
+				
+				<div class="affected_routes">
+				
+					Affected routes: <?php echo $affected; ?>
+				
+				</div>
+				
+			<?php endif; ?>
 			
 			<section class="entry-content cf" itemprop="articleBody">
 				
@@ -30,36 +47,7 @@ get_header(); ?>
 						">
 					</div><!-- end featured image -->
 				<?php endif; ?>
-				
-				<div id="dar-phone">
-				To request a ride call  <a href="tel:<?php the_field('phone');?>">
-				<?php
-				the_field('phone');
-				?>
-				</a>
-				</div><!-- end #dar-phone-->
-
-				<div id="dar-service-description">
-
-				<?php
-				the_field('service_description');
-				?>
-				</div><!-- end #dar-service-description-->
-
-				<h2>Hours of Operation</h2>
-				<div id="dar-hours-of-operation">
-				<?php
-				the_field('hours_of_operation');
-				?>
-				</div><!-- end #dar-hours-of-operation-->
-
-				<h2>Fares</h2>
-				<div id="dar-fares">
-				<?php
-				the_field('dar_fares');
-				?>
-				</div><!-- end #dar-fares -->
-
+									
 				<?php the_content(); ?>
 
 			</section>
@@ -83,6 +71,13 @@ get_header(); ?>
 		</article>
 
 	<?php endwhile;  ?>
+	
+	<?php
+	the_post_navigation( array(
+		'prev_text'		=> __('&laquo; previous: %title'),
+		'next_text'		=> __("next: %title &raquo;"),
+	));
+	?>
 
 	</div> <!-- end #main -->
 	

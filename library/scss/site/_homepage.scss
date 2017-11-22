@@ -2,7 +2,6 @@
 	background: #9e524c;
 	border-bottom: 2px solid #c67b75;
 	border-top: 2px solid #c67b75;
-	position: relative;
 }
 
 .home {
@@ -403,8 +402,8 @@ input.error {
 	button.btn-default {
 		float: right;
 		color: white;
-		background: #c67b75;
-		border: outset 2px lighten(#9e524c, 5%);
+		background: transparent;
+		border: outset 1px lighten(#9e524c, 5%);
 	}
 }
 
@@ -419,6 +418,10 @@ input.error {
 	text-align: center;
 	text-transform: uppercase;
 	color: #fff;
+	
+	&:visited {
+		color: #fff;
+	}
 }
 
 #home-news-area {
@@ -522,4 +525,8 @@ input.error {
 		background: darken(#62a038, 8%);
 	}
 	
+}
+
+g#background .cls-1 {
+	fill: #DDCFC5;;
 }

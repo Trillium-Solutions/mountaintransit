@@ -61,8 +61,8 @@
 								
 							</div>
 						</li>
-						<li><a href="">Fares &amp; Passes</a></li>
-						<li><a>More</a>
+						<li><a href="fares-and-tickets">Fares &amp; Passes</a></li>
+						<li><a>How to Ride</a>
 							<div class="dropdown">
 								
 								<?php get_template_part( 'secondary-icon-links'); ?>

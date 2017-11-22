@@ -24,7 +24,6 @@
 			<div id="default-settings">
 				<div class="form-row clear">
 					<div>Departing: <strong>Now</strong></div>
-					<div>Showing the: <strong>Quickest Trip</strong></div>
 					<button type="button" class="btn btn-default">Edit</button>
 				</div>
 			</div>

@@ -95,7 +95,9 @@ function marta_scripts() {
 	
 	wp_enqueue_style( 'marta-style', get_stylesheet_uri() );
 	
-	wp_enqueue_script( 'mountain-script', get_template_directory_uri() . '/library/js/mountain.js', array('jquery'), false, true );
+	wp_enqueue_script( 'mountain-script', get_template_directory_uri() . '/library/js/mountain.js', array('jquery', 'google-maps'), false, true );
+	
+	wp_enqueue_script('google-maps', "https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKFNwRvNc7054bFn6LKGKAQ0tm-6VgRI&libraries=places", array(), false, true );
 
 }
 add_action( 'wp_enqueue_scripts', 'marta_scripts' );
@@ -121,7 +123,9 @@ function the_breadcrumb() {
 	echo '<li class="separator"> > </li>';
     if ( is_single() ) {
 		$post_type = get_post_type_object( get_post_type() );
-		printf('<li>%s</li>', $post_type->label );
+		$archive = get_post_type_archive_link( get_post_type() );
+		$content = $archive ? sprintf('<a href="%s">%s</a>', $archive, $post_type->label) : $post_type->label; 
+		printf('<li>%s</li>', $content );
 		echo '<li class="separator"> > </li>';
     } elseif ( is_page() ) {
     	if ( $post->post_parent ) {
@@ -134,6 +138,12 @@ function the_breadcrumb() {
     }
 	if (get_post_type() == 'route') {
 		printf('<li>%s</li>', marta_route_menu_name($post->ID));
+	} elseif ( is_search() ) {
+		printf('<li>Search: %s</li>', get_search_query() ); 
+	} elseif ( is_404() ) {
+		echo '<li>404 Not Found</li>';
+	} elseif ( is_archive() ) {
+		printf('<li>Archive: %s</li>', get_post_type() );
 	} else {
 		printf('<li>%s</li>', get_the_title() );
 	}
@@ -201,7 +211,7 @@ function codex_route_init() {
 	);
 
 	$args = array(
-		'menu_icon' => '',
+		'menu_icon' => 'dashicons-groups',
 		'labels'             => $labels,
 		'public'             => true,
 		'publicly_queryable' => true,
@@ -210,13 +220,48 @@ function codex_route_init() {
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'contact-profile' ),
 		'capability_type'    => 'post',
-		'has_archive'        => true,
+		'has_archive'        => false,
 		'hierarchical'       => true,
 		'menu_position'      => null,
 		'supports'           => array( 'title', 'editor', 'revisions','thumbnail' )
 	);
 
 	register_post_type( 'contact-profile', $args );
+	
+	$labels = array(
+		'name'               => _x( 'Board Meetings', 'post type general name' ),
+		'singular_name'      => _x( 'board-meeting', 'post type singular name' ),
+		'menu_name'          => _x( 'Board Meetings', 'admin menu'),
+		'name_admin_bar'     => _x( 'Board Meeting', 'add new on admin bar'),
+		'add_new'            => _x( 'Add New meeting', 'board-meeting'),
+		'add_new_item'       => __( 'Add New meeting'),
+		'new_item'           => __( 'New meeting'),
+		'edit_item'          => __( 'Edit meeting'),
+		'view_item'          => __( 'View meeting '),
+		'all_items'          => __( 'All meetings'),
+		'search_items'       => __( 'Search meetings'),
+		'parent_item_colon'  => __( 'Parent meeting:'),
+		'not_found'          => __( 'No meetings found.'),
+		'not_found_in_trash' => __( 'No meetings found in Trash.')
+	);
+
+	$args = array(
+		'menu_icon' => 'dashicons-clipboard',
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'board-meeting' ),
+		'capability_type'    => 'post',
+		'has_archive'        => false,
+		'hierarchical'       => true,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'revisions', 'thumbnail' )
+	);
+
+	register_post_type( 'board-meeting', $args );
 
 	add_image_size( 'transit-page-600', 600, 400, true );
 }
@@ -290,9 +335,26 @@ function get_amtrak_link() {
 	echo "http://www.amtrakcalifornia.com";
 }
 
-function get_route_map( $long_name ) {
+function get_map_name( $route_id ) {
+	if ($short = get_post_meta($route_id, 'route_short_name', true) ) {
+		$s_2_name = array(
+			'1'	=> 'Route 1 Boulder',
+			'11' => 'Route 11',
+			'3' => 'Route 3',
+			'2' => 'Route 2',
+			'4' => 'Route 4',
+			'Big Bear OTM' => 'BB OTM',
+			'RIM OTM' => 'RIM Off'
+		);
+		return $s_2_name[$short];
+	} else {
+		return get_post_meta($route_id, 'route_long_name', true);
+	}
+}
+
+function get_route_map( $route_id ) {
 	$base_url = 'https://marta.doublemap.com/map/embed?key=s3283xKQfwfunfcNPM2KJPNBwo0X17Zt&inactive=true&name=';
-	$route = rawurlencode( $long_name );
+	$route = rawurlencode( get_map_name($route_id) );
 	$url = $base_url . $route;
 	printf('<iframe src="%s"></iframe>', $url);	
 }
@@ -342,7 +404,7 @@ function marta_custom_route_title() {
 	$text = '#' . get_post_meta( $post->ID, 'route_text_color', true);
 	$region = get_field('route_group', $post->ID);
 	$days = get_field('days_of_week', $post->ID);
-	echo '<header class="hentry">';
+	echo '<header class="page-header">';
 	printf('<h1 style="background-color:%s; color:%s;" class="route-title">%s</h1>', $color, $text, marta_route_menu_name($post->ID) );
 	
 	if ( !empty( $short_name) ) {
@@ -366,6 +428,41 @@ function marta_route_menu_name( $id ) {
 	}
 }
 
+function marta_overwrite_affected( $the_affected ) {
+	return array_map( 'marta_name_link', $the_affected );
+}
+add_filter('tcp_display_affected', 'marta_overwrite_affected');
+
+function marta_name_link( $route_tag = null, $post_id = null ) {
+	if ( empty($route_tag) && empty($post_id) ) {
+		return '';
+	}
+	if ( empty($post_id) ) {
+		$r_post = get_page_by_path( $route_tag, OBJECT, 'route' );
+		if ( empty( $r_post) ) {
+			return $route_tag;
+		}
+		$post_id = $r_post->ID;
+	}
+	return sprintf('<a href="%s" style="background-color: #%s;color: #%s;" class="rte-btn-link" data-name="%s">%s</a>', get_the_permalink($post_id), get_post_meta($post_id, 'route_color', true), get_post_meta($post_id, 'route_text_color', true), marta_get_imap_name(get_post_meta($post_id, 'route_short_name', true)), marta_route_menu_name($post_id));
+}
+
+function marta_get_imap_name( $shortname ) {
+	if ( !empty( $shortname ) ) {
+		$s_2_name = array(
+			'1'	=> 'route_1',
+			'11' => 'route_11',
+			'3' => 'route_3',
+			'2' => 'route_2',
+			'4' => 'route_4',
+			'Big Bear OTM' => 'big_bear_otm',
+			'RIM OTM' => 'rim_otm'
+		);
+		return $s_2_name[$shortname];
+	}
+	return '';
+}
+
 function marta_route_select() {
 	echo '<div id="route-select-dropdown">';
 	echo '<button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">';
@@ -379,7 +476,7 @@ function marta_route_select() {
 	);
 	$routes = get_posts( $args );
 	foreach ( $routes as $route ) {
-		printf('<li><a href="%s" style="background-color: #%s">%s</a></li>', get_the_permalink($route->ID), get_post_meta($route->ID, 'route_color', true), marta_route_menu_name($route->ID) );
+		printf('<li>%s</li>', marta_name_link(null, $route->ID) );
 	}
 	echo '</ul></div>';
 }

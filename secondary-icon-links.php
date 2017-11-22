@@ -1,6 +1,6 @@
-<ul>
-	<li><a href="<?php echo get_site_url() ?>/road-conditions-and-alerts" ><i id="road-conditions-and-alerts-icon"></i>Road Conditions and Alerts</a></li>
-	<li><a href="<?php echo get_permalink( 41 ); ?>" ><i id="how-to-ride-icon"></i>How to Ride</a></li>
+<ul class="icon-link-list">
+	<li><a href="<?php echo get_permalink( 41 ); ?>" ><i id="how-to-ride-icon"></i>Get Started</a></li>
+	<li><a href="<?php echo get_site_url() ?>/alerts" ><i id="road-conditions-and-alerts-icon"></i>Alerts</a></li>
 	<li><a href="<?php echo get_permalink( 11 ); ?>" ><i id="connections-icon"></i>Connections</a></li>
 	<li><a href="<?php echo get_permalink( 323 ); ?>" ><i id="accessibility-icon"></i>Accessibility</a></li>
 	<li><a href="<?php echo get_permalink( 7 ); ?>" ><i id="bikes-on-buses-icon"></i>Bikes on Buses</a></li>
