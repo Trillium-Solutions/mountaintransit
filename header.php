@@ -29,15 +29,15 @@
 		<header class="header" role="banner">
 			<div id="inner-header" class="wrap cf">
 				<div id="number-and-search-wrap">
-					<div id="google_translate_element">
+					<div id="google_translate">
+						<script type="text/javascript">
+						function googleTranslateElementInit() {
+						  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+					  	}
+						</script>
+						<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 					</div>
 					
-					<script type="text/javascript">
-					function googleTranslateElementInit() {
-					  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-				  	}
-					</script>
-					<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 						
 					<div id="service-phone">
 						<a href="tel:9098785200">Info: 909-878-5200</a>  

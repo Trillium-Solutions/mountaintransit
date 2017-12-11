@@ -515,13 +515,13 @@ input.error {
 		flex: 1;
 		border-radius: 3px 0 0 3px;
 	}
-	button {
+	.button {
 		border: none;
 		border-radius: 0 3px 3px 0;
 		background: #62a038;
 		text-shadow: 0 1px 1px rgba(0,0,0,0.5);
 	}
-	button:hover {
+	.button:hover {
 		background: darken(#62a038, 8%);
 	}
 	

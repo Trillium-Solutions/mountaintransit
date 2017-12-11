@@ -1119,7 +1119,8 @@ h5, .h5 {
 
 #service-phone {
   float: right;
-  width: 160px;
+  width: 100%;
+  text-align: right;
   text-weight: 600;
   font-size: 1.1em;
   margin-top: 9px; }
@@ -1129,7 +1130,19 @@ h5, .h5 {
   #service-phone a:hover {
     text-decoration: underline; }
 
-#google_translate_element,
+#google_translate_element {
+  float: right;
+  color: rgba(255, 255, 255, 0.5); }
+  #google_translate_element .goog-te-gadget {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px; }
+  #google_translate_element .goog-te-combo {
+    height: 25px;
+    line-height: 25px; }
+  #google_translate_element .goog-logo-link {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px; }
+
 #fares-and-tickets-container {
   display: none; }
 
@@ -2983,6 +2996,10 @@ BREAKPOINTS
     margin: 0; }
   .single-route #timetables .fixed-column {
     display: table; }
+
+  #service-phone {
+    width: 160px;
+    margin-right: 24px; }
 
   #home-desktop-map-container #planner-wrap #planner {
     max-width: 100%; }
