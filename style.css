@@ -2438,6 +2438,12 @@ tbody th {
   #timetables .table-container tbody th,
   #timetables .table-container tbody td {
     white-space: nowrap; }
+#timetables .stop-code {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 0.85rem; }
+#timetables .stop-code:before {
+  content: "Stop Code: "; }
 #timetables .timetable-bottom {
   padding: 1rem;
   margin: 0;
@@ -2903,12 +2909,12 @@ input.error {
     margin: 0;
     flex: 1;
     border-radius: 3px 0 0 3px; }
-  #newsletter-subscribe button {
+  #newsletter-subscribe .button {
     border: none;
     border-radius: 0 3px 3px 0;
     background: #62a038;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }
-  #newsletter-subscribe button:hover {
+  #newsletter-subscribe .button:hover {
     background: #4f822d; }
 
 g#background .cls-1 {

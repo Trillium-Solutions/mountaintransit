@@ -978,6 +978,16 @@ tbody th {
 		}
 	}
 	
+	.stop-code {
+		font-weight: normal;
+		text-transform: uppercase;
+		font-size: 0.85rem;
+	}
+	
+	.stop-code:before {
+		content: "Stop Code: ";
+	}
+	
 	.timetable-bottom {
 		padding: 1rem;
 		margin: 0;
