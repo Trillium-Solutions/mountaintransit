@@ -68,6 +68,11 @@ Template Name: route_individual_page
 							<!-- Autofilled by Javascript -->
 						</div>
 					</div>
+					
+					<div class="text-arrivals">
+						<div>Text Stop ID # to <a href="tel:9099630076">(909) 963-0076</a> for real-time bus arrivals on your phone</div>
+					</div>
+					
 				</div>
 				
 				<?php the_timetables(); ?>

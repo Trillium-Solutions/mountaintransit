@@ -979,13 +979,27 @@ tbody th {
 	}
 	
 	.stop-code {
-		font-weight: normal;
-		text-transform: uppercase;
+		color: #5a332a;
 		font-size: 0.85rem;
 	}
 	
 	.stop-code:before {
-		content: "Stop Code: ";
+		content: "Stop ID #";
+	}
+	
+	.text-arrivals {
+		align-self: center;
+		margin: auto;
+		flex: 2 1 auto;
+		font-weight: bold;
+		
+		div {
+			background: #fbf9f8;
+			border: 2px solid #e0d7cb;
+			padding: 6px 12px;
+			margin: 6px auto;
+			max-width: 552px;
+		}	
 	}
 	
 	.timetable-bottom {
