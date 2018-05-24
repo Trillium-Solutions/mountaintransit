@@ -1,8 +1,8 @@
-#Mountain Transit Theme Reference
+# Mountain Transit Theme Reference
 
 This guide is intended to cover the layout and features of the Mountain Transit Theme. Any changes in functionality or additional template pages should be reflected here. Known site issues and suggestions for improvement should be submitted via Github's issue tracker.  
 
-###Contents
+### Contents
 
 * [Theme Features](#theme-features)
 * [GTFS Update](#gtfs-update)
@@ -10,21 +10,21 @@ This guide is intended to cover the layout and features of the Mountain Transit 
 * [Plugins](#plugins)
 * [Credits](#credits)
 
-##Theme Features
+## Theme Features
 
-The Mountain Transit theme has many features editable from the wp-admin area, including adding News and Service Alerts, customizing the footer menus, uploading board meeting agendas and minutes, and editing timetables. Route pages are automatically created using `TSV Site Update`. 
+The Mountain Transit theme has many features editable from the wp-admin area, including adding News and Service Alerts, customizing the footer menus, uploading board meeting agendas and minutes, and editing timetables. Route pages are automatically created using `TSV Site Update`.
 
-####Adding Alerts
+#### Adding Alerts
 
 Alerts are created by adding a new News post and tagging it with the appropriate *Alert Zone(s)*. Possible Alert Zones can be found under *News:Alert Zone*.
 
-##GTFS Update
+## GTFS Update
 
-TSV Site Update uses GTFS data to automatically create route pages. The data must be located in `wp-content/transit-data/route_data.tsv`. Additionally, the *Advanced Custom Fields* plugin must be installed for route pages to function. 
+TSV Site Update uses GTFS data to automatically create route pages. The data must be located in `wp-content/transit-data/route_data.tsv`. Additionally, the *Advanced Custom Fields* plugin must be installed for route pages to function.
 
-Errors in GTFS update indicate errors in GTFS feed data and should be corrected there; however, they may be temporarily fixed by editing fields in the appropriate **Route** page. 
+Errors in GTFS update indicate errors in GTFS feed data and should be corrected there; however, they may be temporarily fixed by editing fields in the appropriate **Route** page.
 
-##Template Files
+## Template Files
 
 - **404.php**
 - **archive-alert.php**
@@ -70,16 +70,16 @@ Errors in GTFS update indicate errors in GTFS feed data and should be corrected 
 - **taxonomy-custom\_cat.php**
 - **template-routes-and-schedules.php**
 
-##Plugins
+## Plugins
 
 - Admin Menu Editor
 - Advanced Custom Fields
 - Contact Form 7
 
-##Credits
+## Credits
 
-Theme built by Trillium Solutions, Inc for Mountain Transit. 
+Theme built by Trillium Solutions, Inc for Mountain Transit.
 
-This theme was built on top of Bones, a flexible, minimalist Wordpress theme for developers. 
+This theme was built on top of Bones, a flexible, minimalist Wordpress theme for developers.
 Author: Eddie Machado
 URL: http://themble.com/bones/

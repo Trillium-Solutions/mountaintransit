@@ -6,7 +6,7 @@
 	margin: 10px;
 	background: rgba(255,255,0,.2);
 	padding: 10px;
-	border: 1px solid yellow; 
+	border: 1px solid yellow;
 }
 
 #big-bear-page-map-container, #rim-page-map-container {
@@ -50,21 +50,21 @@ $inner-shadow: rgba(0,0,0,.15);
 		font-family: $pf_serif;
 		font-size: 21px;
 		padding: 6px;
-		padding-left: 19px; 
+		padding-left: 19px;
 		border-top: 1px solid #c8c4c0;
-		border-bottom: 1px solid #c8c4c0; 
-		
+		border-bottom: 1px solid #c8c4c0;
+
 		span {
 			font-size: 12px;
 			float: right;
 			margin-right: 40px;
 		}
 	}
-	
+
 	ul {
 		padding:0;
 		margin: 0;
-		
+
 		li {
 			width: 50%;
 			border-right: 1px solid #c8b29a;
@@ -73,7 +73,7 @@ $inner-shadow: rgba(0,0,0,.15);
 			padding: 25px;
 			text-align: center;
 
-			i {	
+			i {
 				background-image: url(library/images/kern-sprites.png);
 				width: 23px;
 				height: 23px;
@@ -83,14 +83,14 @@ $inner-shadow: rgba(0,0,0,.15);
 				position: relative;
 				top: 6px;
 			}
-		
+
 		}
 		li:hover {
 			background:#ddf3ff;
 			cursor: pointer;
-		}	
+		}
 	}
-	
+
 	#schedule-links {
 		padding: 0;
 	}
@@ -109,8 +109,8 @@ $inner-shadow: rgba(0,0,0,.15);
 		margin-bottom: 0px;
 		background: #f5f2ee;
 		padding: 5px 0 0 0;
-		padding-left: 19px;  
-		
+		padding-left: 19px;
+
 		span {
 			float: left;
 		}
@@ -141,17 +141,17 @@ $inner-shadow: rgba(0,0,0,.15);
 		margin: 0;
 	}
 	.route-alert-header {
-		background: #fef200; 
+		background: #fef200;
 		padding: 10px;
 		border-radius: 10px;
 	}
-	
+
 	.route-alert-header.not-first {
 		margin-top: 10px;
 	}
-	
+
 	i {
-	
+
 		background-image: url(library/images/kern-sprites.png);
 		width: 30px;
 		height: 25px;
@@ -163,7 +163,7 @@ $inner-shadow: rgba(0,0,0,.15);
 	#alert-content {
 		padding: 10px;
 		border-bottom-right-radius: 10px;
-		border-bottom-left-radius: 10px; 
+		border-bottom-left-radius: 10px;
 	}
 }
 
@@ -190,7 +190,7 @@ li.minimized {
 		background-image: url(library/images/kern-sprites.png);
 		background-position: -241px -10px;
 	}
-}  
+}
 
 #route-page-title {
 	float: left;
@@ -212,19 +212,19 @@ li.minimized {
 	line-height: 0;
 	position: relative;
 	margin-bottom: 20px;
-	
+
 	a:link {
 		float: left;
 		display: block;
 	}
-	
+
 	img {
 		padding: 0;
 		margin: 0;
 		line-height: 0;
 		max-width: 100%;
 	}
-	
+
 	float: left;
 	margin: 20px;
 	padding: 0;
@@ -249,7 +249,7 @@ li.minimized {
 
 #timetable-return-link {
 	clear: both;
-	
+
 	a:link, a:visited, a:active {
 		color: white;
 	}
@@ -296,7 +296,7 @@ li.minimized {
 	text-align: center;
 
 	table {
-	    white-space: nowrap !important; 
+	    white-space: nowrap !important;
 		border-bottom: grey;
 	}
 }
@@ -306,7 +306,7 @@ li.minimized {
 		float: none;
 		width: 100%;
 		text-align: left;
-	
+
 		i {
 			top: -7px;
 		}
@@ -316,7 +316,7 @@ li.minimized {
 ul#route-anchors {
 	margin: 10px 0px 10px 10px;
 	clear: both;
-	
+
 	li {
 		float: left;
 		margin: 0 10px;
@@ -330,18 +330,18 @@ ul#route-anchors {
 }
 
 tr.stop_times_row:hover {
-	background: #d6ffd4 !important; 
+	background: #d6ffd4 !important;
 
 	td{
-		background: #d6ffd4 !important; 
-	
+		background: #d6ffd4 !important;
+
 	}
 	th{
-		background: #c8fdff !important; 
+		background: #c8fdff !important;
 	}
-	
+
 	.timepoint-number {
-		background: #c8fdff !important; 
+		background: #c8fdff !important;
 	}
 }
 
@@ -365,11 +365,11 @@ table.route-table {
 #fullscreen-table-link {
 	float: right;
 
-	span {	
+	span {
 		font-size: 10px;
 		margin-right: 10px;
 	}
-	
+
 	i {
 		background-image: url(library/images/sprites.png);
 		float: left;
@@ -378,7 +378,7 @@ table.route-table {
 		position: relative;
 		top: 2px;
 		background-position: -660px -150px;
-	}	
+	}
 }
 
 .route-info-box.timetables.fullscreen {
@@ -401,13 +401,13 @@ table.route-table {
 			position: relative;
 			top: -1px;
 		}
-		
+
 		i:before {
 			content: "X";
 			font-size: .9em;
 		}
 	}
-	
+
 	#timetable-holder {
 		overflow-y: scroll;
 		position: relative;
@@ -429,7 +429,7 @@ i.route-icon-sml {
 }
 
 i.route-icon {
-	float: left;  
+	float: left;
 }
 
 .open-close-icon {
@@ -457,7 +457,7 @@ i.route-icon {
 	width: 100%;
 	padding: 0;
 	color: black;
-	
+
 
 	h2 {
 		cursor: pointer;
@@ -466,14 +466,14 @@ i.route-icon {
 		padding: 10px 10px 10px 20px;
 		font-size: 15px;
 		font-weight: 700;
-	
+
 		i {
 			float: right;
 			font-size: .76em;
 			color: #6c665e;
-		
+
 		}
-		
+
 		i.open-close-icon {
 			width: 15px;
 			height: 15px;
@@ -495,30 +495,30 @@ i.route-icon {
 	ul {
 		margin: 0;
 		padding: 0;
-		
+
 	 	ul {
 			border-top: 1px solid grey;
 			margin: 0;
 			padding: 0;
-			
+
 			li {
 				padding-left: 20px;
 				padding-bottom: 10px;
 				padding-top: 10px;
-				
+
 				i {
 					width: 35px;
 					float: left;
 					height: 35px;
 				}
 			}
-			
+
 			li:hover {
 				background-color: #eef9dc;
 			}
 		}
 	}
-	
+
 	.route-days-of-week {
 		font-size: .8em;
 		color:#4a4a4a;
@@ -529,7 +529,7 @@ i.route-icon {
 	h2 {
 		margin-bottom: 0;
 	}
-	
+
 	i.open-close-icon {
 		width: 15px;
 		height: 15px;
@@ -543,21 +543,21 @@ i.route-icon {
 
 .single-timetable #generic-wide-container {
 	text-align: left;
-	
+
 	#timetable-content {
 		background-color: transparent;
 		margin-bottom: 20px;
 		clear: both;
-		
+
 		p {
 			margin: 0;
 			padding: 0;
 		}
 	}
-		
+
 	table {
 		margin: 0 auto;
-	}	
+	}
 }
 
 #timetable-detail-maps{
@@ -583,7 +583,7 @@ i.route-icon {
 }
 
 .area-box li:hover {
-	cursor: pointer; 
+	cursor: pointer;
 }
 
 .detail-loading {
@@ -592,14 +592,14 @@ i.route-icon {
 	left: 10px;
 	width: 100px;
 	height: 33px;
-	background: url(images/loading.gif); 
+	background: url(images/loading.gif);
 	background-repeat: no-repeat;
 }
 
 #route-alerts {
 	margin-right: 10px;
 	margin-left: 10px;
-	
+
 	ul {
 		li.expanded {
 			border-bottom: 10px solid #fef200;
@@ -608,12 +608,12 @@ i.route-icon {
 		}
 	}
 	h3 {
-		cursor: pointer;  
+		cursor: pointer;
 	}
 }
 
 #dar-info-container.no-map {
-	border-right: 1px solid grey; 
+	border-right: 1px solid grey;
 }
 
 #no-map {
@@ -665,7 +665,7 @@ i.route-icon {
 
 .route-242,
 .route-243 {
-	
+
 	.route-circle {
 		width: auto;
 		padding: 0 4px;
@@ -674,7 +674,7 @@ i.route-icon {
 
 .route-6319,
 .route-1194 {
-	
+
 	.route-circle {
 		display: none;
 	}
@@ -703,7 +703,7 @@ i.route-icon {
 		background-color: #f9f5e5;
 		background-image: url(library/images/grey_grain.jpg);
 	}
-	
+
 	h4 {
 		margin: 0;
 		padding: 0.5rem;
@@ -719,7 +719,7 @@ i.route-icon {
 		padding: 0.5rem;
 		font-size: 0.85rem;
 		text-transform: uppercase;
-		
+
 		span {
 			display: block;
 			text-transform: none;
@@ -732,12 +732,12 @@ i.route-icon {
 
 .single-route {
 	#route-select-dropdown {
-		
+
 		display: none;
 		position: relative;
 		min-width: 210px;
 		background-color: #fff;
-		
+
 		.dropdown-menu {
 			margin: 0;
 			padding: 0;
@@ -783,17 +783,17 @@ i.route-icon {
 		align-items: center;
 		flex-wrap: wrap;
 	}
-	
+
 	.page-header {
 		margin-bottom: 1rem;
 		margin-top: 1.5rem;
-		
+
 		h1 {
 			display: inline-block;
 			border-radius: 44px;
 			padding: 0 1rem;
 		}
-		
+
 		.subtitle {
 			font-size: 1.25rem;
 			margin-bottom: 0;
@@ -808,14 +808,14 @@ i.route-icon {
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
-		
+
 		#pdf-link, #route-fares-link {
 			margin: 6px 8px;
 		}
 	}
 	#map-header {
 		position: relative;
-		
+
 		h3 {
 			font-weight: bold;
 			margin: 0;
@@ -852,7 +852,7 @@ i.route-icon {
 	#map-holder {
 		height: 70vh;
 		min-height: 400px;
-		
+
 		iframe {
 			width: 100%;
 			height: 100%;
@@ -924,7 +924,7 @@ table {
 	border-spacing: 0;
 	border-collapse: collapse;
 	color: #000;
-	
+
 }
 
 table th, table td {
@@ -954,7 +954,7 @@ tbody th {
 	color: #fff;
 	background-color: #fff;
 }
- 
+
 #timetables{
 	h1.timetable-page-label,
 	h2.description,
@@ -971,37 +971,38 @@ tbody th {
 		border-left: 3px solid darken(#f5f2ee, 11%);
 		border-right: 3px solid darken(#f5f2ee, 11%);
 		border-top: 3px solid darken(#f5f2ee, 11%);
-		
+
 		tbody th,
 		tbody td {
 			white-space: nowrap;
 		}
 	}
-	
+
 	.stop-code {
 		color: #5a332a;
 		font-size: 0.85rem;
 	}
-	
+
 	.stop-code:before {
 		content: "Stop ID #";
 	}
-	
+
 	.text-arrivals {
 		align-self: center;
 		margin: auto;
 		flex: 2 1 auto;
 		font-weight: bold;
-		
+
 		div {
-			background: #fbf9f8;
+			background: #8b0a0d;
 			border: 2px solid #e0d7cb;
+			color: #fff;
 			padding: 6px 12px;
 			margin: 6px auto;
 			max-width: 552px;
-		}	
+		}
 	}
-	
+
 	.timetable-bottom {
 		padding: 1rem;
 		margin: 0;
@@ -1011,11 +1012,11 @@ tbody th {
 		border-right: 3px solid darken(#f5f2ee, 11%);
 		border-bottom: 3px solid darken(#f5f2ee, 11%);
 	}
-	
+
 	table {
 		width: 100%;
 	}
-	
+
 	table,
 	table th,
 	table td {
@@ -1026,24 +1027,24 @@ tbody th {
 		font-weight: bold;
 		margin: 0 0 1rem;
 	}
-	
+
 	tr:hover {
 		background: lighten(#e7d1d1, 4%);
 	}
-	
+
 	#timetable-buttons {
 		display: flex;
 		flex-wrap: wrap;
-		
+
 		.button-group.dir {
 			margin-right: 2rem;
 			margin-bottom: 1rem;
 		}
-		
+
 		.caption {
 			font-weight: bold;
 		}
-		
+
 		button {
 			font-size: 1.1rem;
 			background: #e7d1d1;
@@ -1071,7 +1072,7 @@ tbody th {
 		display: none;
 		border: none;
 	}
-	
+
 	.stop-time.pm {
 		font-weight: bold;
 	}
@@ -1103,7 +1104,5 @@ tbody th {
 		width: 100%;
 		height: 100%;
 	}
-	
+
 }
-
-

@@ -92,11 +92,11 @@ function bones_custom_image_sizes( $sizes ) {
 /* Enqueue Styles and Scripts */
 function marta_scripts() {
 	wp_enqueue_style( 'googleFonts', 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
-	
+
 	wp_enqueue_style( 'marta-style', get_stylesheet_uri() );
-	
+
 	wp_enqueue_script( 'mountain-script', get_template_directory_uri() . '/library/js/mountain.js', array('jquery', 'google-maps'), false, true );
-	
+
 	wp_enqueue_script('google-maps', "https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKFNwRvNc7054bFn6LKGKAQ0tm-6VgRI&libraries=places", array(), false, true );
 
 }
@@ -124,7 +124,7 @@ function the_breadcrumb() {
     if ( is_single() ) {
 		$post_type = get_post_type_object( get_post_type() );
 		$archive = get_post_type_archive_link( get_post_type() );
-		$content = $archive ? sprintf('<a href="%s">%s</a>', $archive, $post_type->label) : $post_type->label; 
+		$content = $archive ? sprintf('<a href="%s">%s</a>', $archive, $post_type->label) : $post_type->label;
 		printf('<li>%s</li>', $content );
 		echo '<li class="separator"> > </li>';
     } elseif ( is_page() ) {
@@ -139,7 +139,7 @@ function the_breadcrumb() {
 	if (get_post_type() == 'route') {
 		printf('<li>%s</li>', marta_route_menu_name($post->ID));
 	} elseif ( is_search() ) {
-		printf('<li>Search: %s</li>', get_search_query() ); 
+		printf('<li>Search: %s</li>', get_search_query() );
 	} elseif ( is_404() ) {
 		echo '<li>404 Not Found</li>';
 	} elseif ( is_archive() ) {
@@ -157,7 +157,7 @@ add_action( 'init', 'codex_route_init' );
  * @link http://codex.wordpress.org/Function_Reference/register_post_type
  */
 function codex_route_init() {
-	
+
 	$dar_labels = array(
 		'name'               => _x( 'Dial-A-Ride', 'post type general name' ),
 		'singular_name'      => _x( 'dar', 'post type singular name' ),
@@ -192,7 +192,7 @@ function codex_route_init() {
 	);
 
 	register_post_type( 'dar', $args );
-	
+
 	$labels = array(
 		'name'               => _x( 'Contact Profiles', 'post type general name' ),
 		'singular_name'      => _x( 'Staff Contact Profile', 'post type singular name' ),
@@ -227,7 +227,7 @@ function codex_route_init() {
 	);
 
 	register_post_type( 'contact-profile', $args );
-	
+
 	$labels = array(
 		'name'               => _x( 'Board Meetings', 'post type general name' ),
 		'singular_name'      => _x( 'board-meeting', 'post type singular name' ),
@@ -291,14 +291,14 @@ function revcon_change_post_object() {
     $labels->menu_name = 'News';
     $labels->name_admin_bar = 'News';
 }
- 
+
 add_action( 'admin_menu', 'revcon_change_post_label' );
 add_action( 'init', 'revcon_change_post_object' );
 
 function slugify($text)
 {
     // Swap out Non "Letters" with a -
-    $text = preg_replace('/[^\\pL\d]+/u', '-', $text); 
+    $text = preg_replace('/[^\\pL\d]+/u', '-', $text);
 
     // Trim out extra -'s
     $text = trim($text, '-');
@@ -356,7 +356,7 @@ function get_route_map( $route_id ) {
 	$base_url = 'https://marta.doublemap.com/map/embed?key=s3283xKQfwfunfcNPM2KJPNBwo0X17Zt&inactive=true&name=';
 	$route = rawurlencode( get_map_name($route_id) );
 	$url = $base_url . $route;
-	printf('<iframe src="%s"></iframe>', $url);	
+	printf('<iframe src="%s"></iframe>', $url);
 }
 
 function marta_organized_routes() {
@@ -377,7 +377,7 @@ function marta_organized_routes() {
 		$group = get_field( 'route_group', $route->ID );
 		if ( ! array_key_exists( $group, $sorted_routes ) ) {
 			$sorted_routes[$group] = array();
-		} 
+		}
 		$sorted_routes[$group][] = $route;
 	}
 	foreach ( $sorted_routes as $group => $routes ) {
@@ -406,7 +406,7 @@ function marta_custom_route_title() {
 	$days = get_field('days_of_week', $post->ID);
 	echo '<header class="page-header">';
 	printf('<h1 style="background-color:%s; color:%s;" class="route-title">%s</h1>', $color, $text, marta_route_menu_name($post->ID) );
-	
+
 	if ( !empty( $short_name) ) {
 		printf('<p class="subtitle">%s</p>', $long_name);
 	}
@@ -452,6 +452,7 @@ function marta_get_imap_name( $shortname ) {
 		$s_2_name = array(
 			'1'	=> 'route_1',
 			'11' => 'route_11',
+      '13' => 'route_13',
 			'3' => 'route_3',
 			'2' => 'route_2',
 			'4' => 'route_4',

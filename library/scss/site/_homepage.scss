@@ -17,9 +17,9 @@
 	z-index: 999;
 	color: white;
 	text-decoration: underline;
-	font-size: 1.8em; 
+	font-size: 1.8em;
 	font-weight: 500;
-	
+
 	a:link, a:active, a:visited {
 		color: white;
 		text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.67);
@@ -27,7 +27,7 @@
 	a:hover {
 		color: yellow;
 	}
-	
+
 	i {
 		background-image: url(library/images/kern-sprites.png);
 		width: 30px;
@@ -41,7 +41,7 @@
 }
 
 #map-alerts-wrap.no-alerts {
-	font-size: 1.1em; 
+	font-size: 1.1em;
 	font-weight: 300;
 	text-decoration: none;
 	color: #dcdcdc;
@@ -58,7 +58,7 @@
 
 #home-secondary-container {
 	color: white;
-	border-top: 2px solid #7a110a; 
+	border-top: 2px solid #7a110a;
 	padding: 10px;
 	background: #af0f0f; /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover,  #af0f0f 0%, #8b0a0d 100%); /* FF3.6+ */
@@ -73,10 +73,10 @@
 	#menu-home-secondary-right-links {
 		float: left;
 		margin-left: 5%;
-	
-		li { 
+
+		li {
 			margin-bottom: 12px;
-			padding-left:.8em; 
+			padding-left:.8em;
 			text-indent: -.7em;
 			a:link{
 				margin-left: 5px;
@@ -93,7 +93,7 @@
 	#how-to-ride-links {
 		width: 100%;
 		border-bottom: 1px solid white;
-		margin-bottom: 20px;	
+		margin-bottom: 20px;
 	}
 
 	h1, h2 {
@@ -108,7 +108,7 @@
 
 	.secondary-col {
 		height: 260px;
-		
+
 		li {
 			font-size: .9em;
 		}
@@ -117,7 +117,7 @@
 
     #home-news-area{
     	width: 100%;
-    	
+
     	 h2 {
     	 	font-family: $pf_serif;
 			padding-bottom: 0.5rem;
@@ -125,12 +125,12 @@
     		border-bottom: 1px dashed #cb8d8f;
     	}
     }
-    
+
 	a:link, a:active, a:visited {
 		color: white;
 		text-decoration: none;
-	} 
-	
+	}
+
 	a:hover {
 		text-decoration: underline;
 	}
@@ -140,7 +140,7 @@
 		margin: 10px 24px 57px 24px;
 		padding-top: 36px;
 		border-top: 2px solid #a83639;
-	
+
 		a:link {
 			color: #ffc57f !important;
 			text-decoration: underline;
@@ -150,16 +150,16 @@
 		float: left;
 		margin-left: 43px;
 	}
-	
-	ul#menu-secondary-links-home-right {	
+
+	ul#menu-secondary-links-home-right {
 		list-style: none;
 		padding:0;
 		margin-top: 0;
 
 
-		li { 
+		li {
 			margin-bottom: 12px;
-			padding-left: 1.1em; 
+			padding-left: 1.1em;
 			text-indent: -.7em;
 			a:link{
 				margin-left: 5px;
@@ -169,7 +169,7 @@
 		li:before {
 			content: "•  ";
 			color: #be7071; /* or whatever color you prefer */
-		}	
+		}
 	}
 }
 
@@ -189,7 +189,7 @@
 	color: white;
 	padding-bottom: 30px;
 	padding-right: 30px;
-	
+
 	ul {
 		i.generic-alert-icon {
 			background-image: url(library/images/sprites.png);
@@ -199,9 +199,9 @@
 			float: right;
 			position: relative;
 			top: 5px;
-			right: 4px; 
+			right: 4px;
 		}
-		
+
 		li {
 			border-radius: 11px;
 			border: 1px solid white;
@@ -212,21 +212,21 @@
 			float: right;
 			clear: right;
 			margin: 4px 0 4px 5px;
-			padding: 0 7px;  
+			padding: 0 7px;
 			letter-spacing: 3px;
 			line-height: 18px;
 			-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.32);
 			-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.32);
 			box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.32);
 		}
-		
-		 
+
+
 		li.hover, li:hover {
 			position: relative;
 			-webkit-box-shadow: inset 0px 0px 16px -0px rgba(255,255,255,1);
 			-moz-box-shadow: inset 0px 0px 16px -0px rgba(255,255,255,1);
 			box-shadow: inset 0px 0px 16px -0px rgba(255,255,255,1);
-	
+
 			.hover-dot {
 				position: absolute;
 				top: 5px;
@@ -236,7 +236,7 @@
 				height: 35px;
 				width: 4px;
 			}
-		
+
 			.home-list-hover {
 				position: absolute;
 				right: -14px;
@@ -245,14 +245,14 @@
 				border-radius: 6px;
 				height: 10px;
 				width: 10px;
-			}	
-		} 
+			}
+		}
 	}
 	a:link, a:active, a:hover, a:visited {
 		color: white;
 		text-decoration: none;
 	}
-} 
+}
 
 
 .post-type-archive {
@@ -269,12 +269,12 @@
 			clear: none;
 			line-height: 23px;
 			margin-bottom: 20px;
-			
+
 			.generic-route-bottom {
 				border-top: 1px solid rgba(255,255,255,.5);
 				font-size: 12px;
 			}
-			
+
 			i.generic-alert-icon {
 				background-image: url(library/images/sprites.png);
 				background-position: -515px -68px;
@@ -283,7 +283,7 @@
 				float: left;
 				position: relative;
 				margin-left: 5px;
-			 
+
 			}
 		}
 	}
@@ -300,16 +300,16 @@ input.error {
 	padding: 1rem 1.5rem;
 	color: #fff;
 	border-bottom: 2px solid #7a211a;
-	
+
 	#planner {
 		max-width: 400px;
 		margin: auto;
 	}
-	
+
 	#planner-header {
 		padding: 1rem 1.5rem;
 	}
-	
+
 	h1 {
 		text-align: center;
 		background: #ef6822;
@@ -325,18 +325,18 @@ input.error {
 		max-width: 100%;
 		margin-bottom: 0;
 	}
-	
+
 	.form-row {
 		margin-bottom: 1rem;
 	}
-	
+
 	button[type="submit"] {
 		width: 100%;
 		font-size: 1.25rem;
 		background: #af0f0f;
 		transition: background 0.2s ease-out;
 		border: outset 2px #9e524c;
-		
+
 		&:hover, &:focus {
 			background: darken(#af0f0f, 8%);
 			border: inset 2px darken(#af0f0f, 2%);
@@ -359,7 +359,7 @@ input.error {
 	float: right;
 	text-transform: none;
 	font-size: 0.85rem;
-	
+
 	svg {
 		fill: white;
 		width: 18px;
@@ -394,11 +394,11 @@ input.error {
 	font-size: 0.85rem;
 	margin-bottom: 1rem;
 	border: inset 1px #c67b75;
-	
+
 	.form-row {
 		margin: 0;
 	}
-	
+
 	button.btn-default {
 		float: right;
 		color: white;
@@ -418,7 +418,7 @@ input.error {
 	text-align: center;
 	text-transform: uppercase;
 	color: #fff;
-	
+
 	&:visited {
 		color: #fff;
 	}
@@ -426,11 +426,11 @@ input.error {
 
 #home-news-area {
 	margin-top: 2rem;
-	
+
 	h2 {
 		text-align: center;
 		font-weight: 400;
-		
+
 		a {
 			font-size: 0.85rem;
 			position: absolute;
@@ -455,7 +455,7 @@ input.error {
 		position: relative;
 		display: block;
 		flex: 1;
-		
+
 		&:before {
 			content: '';
 			height: 200px;
@@ -465,7 +465,7 @@ input.error {
 			background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.01) );
 		}
 	}
-	
+
 	h3 {
 		font-weight: 400;
 		position: absolute;
@@ -476,14 +476,14 @@ input.error {
 		font-size: 1.25rem;
 		line-height: 1.1;
 		margin-bottom: 0.5rem;
-		
+
 		.date {
 			display: block;
 			font-size: 1rem;
 			margin-top: 8px;
 		}
 	}
-	
+
 	#news-container {
 		justify-content: center;
 		flex-wrap: wrap;
@@ -501,7 +501,7 @@ input.error {
 	background: rgba(0,0,0,0.2);
 	border: 1px solid #fff;
 	text-align: center;
-	
+
 	h3 {
 		font-size: 1rem;
 		margin-top: 0;
@@ -524,9 +524,9 @@ input.error {
 	.button:hover {
 		background: darken(#62a038, 8%);
 	}
-	
+
 }
 
-g#background .cls-1 {
-	fill: #DDCFC5;;
+g#background .cls-2 {
+	fill: #DDCFC5;
 }

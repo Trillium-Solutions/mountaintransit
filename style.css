@@ -2449,7 +2449,7 @@ tbody th {
   flex: 2 1 auto;
   font-weight: bold; }
   #timetables .text-arrivals div {
-    background: #fbf9f8;
+    background: #9e524c;
     border: 2px solid #e0d7cb;
     padding: 6px 12px;
     margin: 6px auto;
@@ -2927,7 +2927,7 @@ input.error {
   #newsletter-subscribe .button:hover {
     background: #4f822d; }
 
-g#background .cls-1 {
+g#background .cls-2 {
   fill: #DDCFC5; }
 
 /***********************
