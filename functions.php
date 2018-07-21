@@ -456,8 +456,8 @@ function marta_get_imap_name( $shortname ) {
 			'3' => 'route_3',
 			'2' => 'route_2',
 			'4' => 'route_4',
-			'Big Bear OTM' => 'big_bear_otm',
-			'RIM OTM' => 'rim_otm'
+			'5' => 'big_bear_otm',
+			'6' => 'rim_otm'
 		);
 		return $s_2_name[$shortname];
 	}
