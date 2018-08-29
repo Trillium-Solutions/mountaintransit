@@ -7,9 +7,9 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	
+
 	<?php wp_head(); ?>
-	
+
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -17,6 +17,7 @@
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 	  ga('create', 'UA-54148164-1', 'auto');
+		ga('set', 'anonymizeIp', true);
 	  ga('send', 'pageview');
 
 	</script>
@@ -37,16 +38,16 @@
 						</script>
 						<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 					</div>
-					
-						
+
+
 					<div id="service-phone">
-						<a href="tel:9098785200">Info: 909-878-5200</a>  
+						<a href="tel:9098785200">Info: 909-878-5200</a>
 					</div>
-				
+
 					<div id="search-wrap">
-						
+
 						<?php get_search_form(); ?>
-						
+
 					</div><!-- end #search-wrap-->
 				</div> <!-- end number-and-search-wrap -->
 
@@ -56,23 +57,23 @@
 					<ul id="top-level-nav">
 						<li><a>Routes &amp; Schedules</a>
 							<div class="dropdown">
-								
+
 								<?php marta_organized_routes(); ?>
-								
+
 							</div>
 						</li>
 						<li><a href="fares-and-tickets">Fares &amp; Passes</a></li>
 						<li><a>How to Ride</a>
 							<div class="dropdown">
-								
+
 								<?php get_template_part( 'secondary-icon-links'); ?>
-								
+
 							</div>
 						</li>
 					</ul>
 				</nav>
 			</div>
 		</header>
-			
+
 		<div id="content">
 			<div id="inner-content" class="wrap cf">
