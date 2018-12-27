@@ -143,7 +143,7 @@ $(document).ready(function() {
 		var dir = $('#timetables .button-group.dir .active').data('target');
 		var days = $('#timetables .button-group.days .active').data('target');
         $('#timetables .timetable-holder').hide();
-		$('#timetables .timetable-holder[data-days='+days+'][data-dir='+dir+']').show();
+		$('#timetables .timetable-holder[data-days="'+days+'"][data-dir="'+dir+'"]').show();
 	}
 
 	function addTimetableButtons(dataclass) {
