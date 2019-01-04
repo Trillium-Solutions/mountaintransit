@@ -1,4 +1,4 @@
-<?php
+ <?php
 /* Header for all pages */
 
 ?><!DOCTYPE html>
@@ -62,7 +62,7 @@
 
 							</div>
 						</li>
-						<li><a href="fares-and-tickets">Fares &amp; Passes</a></li>
+						<li><a href="/fares-and-tickets">Fares &amp; Passes</a></li>
 						<li><a>How to Ride</a>
 							<div class="dropdown">
 

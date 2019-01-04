@@ -6,7 +6,7 @@
 		<h1>Plan Your Trip</h1>
 	</div>
 	<div id="planner-body" class="clear">
-		<form name="f" action="http://jump.trilliumtransit.com/redirect.php">
+		<form name="f" action="https://jump.trilliumtransit.com/redirect.php">
             <input type="hidden" name="sort" value="walk"/>
 			<div class="form-row">
                 <div class="err-msg" tabindex="-1">Please enter a valid starting address.</div>
@@ -46,4 +46,3 @@
 			<button type="submit" class="btn btn-default">Get Directions</button>
 		</form>
 	</div>
-
