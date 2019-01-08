@@ -63,13 +63,13 @@ Template Name: Board meetings
 					'meta_query'	=> array(
 						'relation' => 'AND',
 						array(
-							'key' => 'meeting_date',
+							'key' => 'board_meeting_date',
 							'value' => $start,
 							'compare' => '>=',
 							'type' => 'NUMERIC',
 						),
 						array(
-							'key' => 'meeting_date',
+							'key' => 'board_meeting_date',
 							'value' => $end,
 							'compare' => '<=',
 							'type' => 'NUMERIC',
