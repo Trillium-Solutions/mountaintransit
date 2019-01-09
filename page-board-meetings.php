@@ -66,13 +66,13 @@ Template Name: Board meetings
 							'key' => 'board_meeting_date',
 							'value' => $start,
 							'compare' => '>=',
-							'type' => 'NUMERIC',
+							'type' => 'DATE',
 						),
 						array(
 							'key' => 'board_meeting_date',
 							'value' => $end,
 							'compare' => '<=',
-							'type' => 'NUMERIC',
+							'type' => 'DATE',
 						),
 					)
 				);
