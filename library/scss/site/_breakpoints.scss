@@ -12,18 +12,18 @@
 		background-position: -657px -8px;
 		width: 295px;
 		height: 86px;
-		left: 0px; 
+		left: 0px;
 		margin-top: 10px;
 		margin-left: 10px;
 	}
 	#main-nav {
 		margin-top: 0;
 		margin-left: auto;
-		
+
 		#top-level-nav {
 			background-color: transparent;
 			justify-content: flex-end;
-			
+
 			& > li {
 				font-weight: bold;
 				border-left: none;
@@ -34,7 +34,7 @@
 			& > li:hover {
 				background-color: transparent;
 			}
-			
+
 			& > li:last-child {
 				.dropdown {
 					max-width: 480px;
@@ -42,7 +42,7 @@
 				}
 			}
 		}
-		
+
 		.dropdown .grouped-route-list {
 			display: flex;
 			flex-wrap: wrap;
@@ -62,11 +62,11 @@
 			}
 		}
 	}
-	
+
 	#inner-content {
 		padding: 1rem;
 	}
-	
+
 	.tooltip .tooltiptext {
 		left: 0;
 		right: auto;
@@ -75,7 +75,7 @@
 		right: auto;
 		left: 10px;
 	}
-	
+
 	.single-route {
 		#route-select-dropdown {
 			display: block;
@@ -84,7 +84,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: flex-end;
-			
+
 			h3 {
 				display: block;
 			}
@@ -106,12 +106,12 @@
 			display: table;
 		}
 	}
-	
+
 	#service-phone {
 		width: 160px;
 		margin-right: 24px;
 	}
-	
+
 	#home-desktop-map-container {
 		#planner-wrap {
 			#planner {
@@ -157,7 +157,7 @@
 				border: 2px solid #fad3bf;
 				box-shadow: none;
 				transition: background 0.2s linear;
-				
+
 				&:hover {
 					background: darken(#ef6822, 12%);
 				}
@@ -165,7 +165,7 @@
 			#additional-settings {
 				flex: 1;
 				display: flex;
-				
+
 				.form-row {
 					width: auto;
 					min-width: 130px;
@@ -175,7 +175,7 @@
 				&.hidden {
 					display: none;
 				}
-				
+
 				select {
 					margin: 0;
 				}
@@ -185,7 +185,7 @@
 			padding: 1rem;
 			width: 100%;
 			position: relative;
-			
+
 			#hovers {
 				cursor: pointer;
 			}
@@ -203,17 +203,16 @@
 				text-align: center;
 				border-radius: 14px;
 			}
-			
+
 		}
 		#alerts-wrap {
-			
+
 		}
 	}
 	#home-news-area,
 	#newsletter-subscribe {
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 680px;
 	}
 	#footer-about {
 		float: right;
@@ -222,7 +221,7 @@
 	#footer-left-menu {
 		float: left;
 		width: 30%;
-		
+
 		ul {
 			text-align: right;
 		}
@@ -246,11 +245,11 @@
 		background-position: -0px -0px;
 		left: -132px;
 		margin-top: 10px;
-		margin-left: -8%; 
+		margin-left: -8%;
 	}
 	#main-nav {
 		margin-top: -40px;
-		
+
 		.dropdown {
 			left: -6px;
 			right: -6px;
@@ -259,7 +258,7 @@
 	.footer {
 		margin-top: 2rem;
 	}
-	
+
 	#home-desktop-map-container #route-legend {
 		width: 260px;
 		a {
