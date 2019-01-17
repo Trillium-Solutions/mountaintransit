@@ -51,7 +51,7 @@
 		<h2>News<a href="./news">See all news &raquo;</a></h2>
 		<?php
 		$news_query = new WP_Query( array(
-			'posts_per_page'	=> 2,
+			'posts_per_page'	=> 3,
 		) );
 		if ( $news_query->have_posts() ) :
 		?>

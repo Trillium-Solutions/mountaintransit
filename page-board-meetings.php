@@ -52,8 +52,8 @@ Template Name: Board meetings
 					<input type="submit" value="Get Meetings" />
 				</form>
 				<?php
-				$start = $archive_year . '0101';
-				$end = $archive_year . '1231';
+				$start = $archive_year . '/01/01';
+				$end = $archive_year . '/12/31';
 				$args = array(
 					'post_type' => 'board-meeting',
 					'meta_key' => 'board_meeting_date',

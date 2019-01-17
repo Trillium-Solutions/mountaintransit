@@ -2449,8 +2449,9 @@ tbody th {
   flex: 2 1 auto;
   font-weight: bold; }
   #timetables .text-arrivals div {
-    background: #9e524c;
+    background: #8b0a0d;
     border: 2px solid #e0d7cb;
+    color: #fff;
     padding: 6px 12px;
     margin: 6px auto;
     max-width: 552px; }
@@ -2574,7 +2575,7 @@ tbody th {
 #home-secondary-container {
   color: white;
   border-top: 2px solid #7a110a;
-  padding: 10px;
+  padding: 10px 1.5rem;
   background: #af0f0f;
   /* Old browsers */
   background: -moz-radial-gradient(center, ellipse cover, #af0f0f 0%, #8b0a0d 100%);
