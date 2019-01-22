@@ -2535,7 +2535,7 @@ tbody th {
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults h2 {
     font-size: 1rem;
     color: #fff; }
-  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .form-text {
+  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-text {
     display: none; }
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults label {
     color: #fff; }
@@ -2543,10 +2543,13 @@ tbody th {
     display: none; }
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults input {
     max-width: 100%; }
+  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-footer {
+    float: right; }
 #home-secondary-container .privacy-policy {
   font-size: 0.8rem;
   color: #fff;
-  opacity: 0.75; }
+  opacity: 0.75;
+  text-align: left; }
 
 #home-desktop-map-container {
   background: #9e524c;

@@ -1119,7 +1119,7 @@ tbody th {
 			font-size: 1rem;
 			color: #fff;
 		}
-		.form-text {
+		.ctct-form-text {
 			display: none;
 		}
 		label {
@@ -1131,10 +1131,16 @@ tbody th {
 		input {
 			max-width: 100%;
 		}
+		.ctct-form-footer {
+			float: right;
+		}
+
 	}
 	.privacy-policy {
 		font-size: 0.8rem;
 		color: #fff;
 		opacity: 0.75;
+		text-align: left;
 	}
+
 }
