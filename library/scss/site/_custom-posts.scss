@@ -1106,3 +1106,26 @@ tbody th {
 	}
 
 }
+
+// Contact Form
+.ctct-inline-form .ctct-form-embed .ctct-form-defaults {
+	background: transparent;
+	color: #fff;
+
+	h2 {
+		font-size: 1rem;
+		color: #fff;
+	}
+	.form-description {
+		display: none;
+	}
+	label {
+		color: #fff;
+	}
+	.ctct-gdpr-text {
+		color: #fff;
+		opacity: 0.75;
+		text-align: left;
+	}
+
+}

@@ -2526,6 +2526,21 @@ tbody th {
   width: 100%;
   height: 100%; }
 
+.ctct-inline-form .ctct-form-embed .ctct-form-defaults {
+  background: transparent;
+  color: #fff; }
+  .ctct-inline-form .ctct-form-embed .ctct-form-defaults h2 {
+    font-size: 1rem;
+    color: #fff; }
+  .ctct-inline-form .ctct-form-embed .ctct-form-defaults .form-description {
+    display: none; }
+  .ctct-inline-form .ctct-form-embed .ctct-form-defaults label {
+    color: #fff; }
+  .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-gdpr-text {
+    color: #fff;
+    opacity: 0.75;
+    text-align: left; }
+
 #home-desktop-map-container {
   background: #9e524c;
   border-bottom: 2px solid #c67b75;
