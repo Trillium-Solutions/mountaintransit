@@ -2548,6 +2548,8 @@ tbody th {
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-footer, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-footer {
     float: right;
     padding: 0; }
+  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-field, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-field {
+    margin-bottom: 0; }
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-errorMessage, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-errorMessage {
     text-shadow: 1px 1px #000; }
 #home-secondary-container .privacy-policy, #page-footer .privacy-policy {
