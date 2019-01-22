@@ -1143,6 +1143,12 @@ tbody th {
 		.ctct-form-errorMessage {
 			text-shadow: 1px 1px #000;
 		}
+		.ctct-form-success {
+			min-height: auto;
+			.ctct-form-text {
+				display: inherit;
+			}
+		}
 
 	}
 	.privacy-policy {
