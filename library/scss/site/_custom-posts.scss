@@ -1114,6 +1114,7 @@ tbody th {
 	.ctct-inline-form .ctct-form-embed .ctct-form-defaults {
 		background: transparent;
 		color: #fff;
+		padding: 0;
 
 		h2 {
 			font-size: 1rem;
@@ -1124,6 +1125,7 @@ tbody th {
 		}
 		label {
 			color: #fff;
+			font-weight: normal;
 		}
 		.ctct-gdpr-text {
 			display: none;
@@ -1133,14 +1135,22 @@ tbody th {
 		}
 		.ctct-form-footer {
 			float: right;
+			padding: 0;
+		}
+		.ctct-form-errorMessage {
+			text-shadow: 1px 1px #000;
 		}
 
 	}
 	.privacy-policy {
-		font-size: 0.8rem;
-		color: #fff;
-		opacity: 0.75;
 		text-align: left;
+		margin-top: 8px;
+		a {
+			font-size: 0.8rem;
+			color: #fff;
+			opacity: 0.75;
+			text-decoration: underline;
+		}
 	}
 
 }

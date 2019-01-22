@@ -2531,25 +2531,33 @@ tbody th {
 
 #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults {
   background: transparent;
-  color: #fff; }
+  color: #fff;
+  padding: 0; }
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults h2, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults h2 {
     font-size: 1rem;
     color: #fff; }
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-text, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-text {
     display: none; }
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults label, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults label {
-    color: #fff; }
+    color: #fff;
+    font-weight: normal; }
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-gdpr-text, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-gdpr-text {
     display: none; }
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults input, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults input {
     max-width: 100%; }
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-footer, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-footer {
-    float: right; }
+    float: right;
+    padding: 0; }
+  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-errorMessage, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-errorMessage {
+    text-shadow: 1px 1px #000; }
 #home-secondary-container .privacy-policy, #page-footer .privacy-policy {
-  font-size: 0.8rem;
-  color: #fff;
-  opacity: 0.75;
-  text-align: left; }
+  text-align: left;
+  margin-top: 8px; }
+  #home-secondary-container .privacy-policy a, #page-footer .privacy-policy a {
+    font-size: 0.8rem;
+    color: #fff;
+    opacity: 0.75;
+    text-decoration: underline; }
 
 #home-desktop-map-container {
   background: #9e524c;
@@ -2931,27 +2939,10 @@ input.error {
 
 #newsletter-subscribe {
   margin: 1rem 0;
-  padding: 1rem;
+  padding: 1.75rem;
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid #fff;
   text-align: center; }
-  #newsletter-subscribe h3 {
-    font-size: 1rem;
-    margin-top: 0; }
-  #newsletter-subscribe .form-row {
-    display: flex;
-    justify-content: center; }
-  #newsletter-subscribe input {
-    margin: 0;
-    flex: 1;
-    border-radius: 3px 0 0 3px; }
-  #newsletter-subscribe .button {
-    border: none;
-    border-radius: 0 3px 3px 0;
-    background: #62a038;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }
-  #newsletter-subscribe .button:hover {
-    background: #4f822d; }
 
 g#background .cls-2 {
   fill: #DDCFC5; }
