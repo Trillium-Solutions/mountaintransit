@@ -2529,23 +2529,23 @@ tbody th {
 #newsletter-subscribe {
   max-width: 500px; }
 
-#home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults {
+#home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults {
   background: transparent;
   color: #fff; }
-  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults h2 {
+  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults h2, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults h2 {
     font-size: 1rem;
     color: #fff; }
-  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-text {
+  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-text, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-text {
     display: none; }
-  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults label {
+  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults label, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults label {
     color: #fff; }
-  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-gdpr-text {
+  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-gdpr-text, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-gdpr-text {
     display: none; }
-  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults input {
+  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults input, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults input {
     max-width: 100%; }
-  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-footer {
+  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-footer, #page-footer .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-form-footer {
     float: right; }
-#home-secondary-container .privacy-policy {
+#home-secondary-container .privacy-policy, #page-footer .privacy-policy {
   font-size: 0.8rem;
   color: #fff;
   opacity: 0.75;
