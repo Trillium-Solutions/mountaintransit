@@ -1106,7 +1106,9 @@ tbody th {
 	}
 
 }
-
+#newsletter-subscribe {
+	max-width: 500px;
+}
 // Contact Form
 #home-secondary-container {
 	.ctct-inline-form .ctct-form-embed .ctct-form-defaults {
@@ -1117,17 +1119,22 @@ tbody th {
 			font-size: 1rem;
 			color: #fff;
 		}
-		.form-description {
+		.form-text {
 			display: none;
 		}
 		label {
 			color: #fff;
 		}
 		.ctct-gdpr-text {
-			color: #fff;
-			opacity: 0.75;
-			text-align: left;
+			display: none;
 		}
-
+		input {
+			max-width: 100%;
+		}
+	}
+	.privacy-policy {
+		font-size: 0.8rem;
+		color: #fff;
+		opacity: 0.75;
 	}
 }

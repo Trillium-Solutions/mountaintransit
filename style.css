@@ -2526,20 +2526,27 @@ tbody th {
   width: 100%;
   height: 100%; }
 
+#newsletter-subscribe {
+  max-width: 500px; }
+
 #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults {
   background: transparent;
   color: #fff; }
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults h2 {
     font-size: 1rem;
     color: #fff; }
-  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .form-description {
+  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .form-text {
     display: none; }
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults label {
     color: #fff; }
   #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults .ctct-gdpr-text {
-    color: #fff;
-    opacity: 0.75;
-    text-align: left; }
+    display: none; }
+  #home-secondary-container .ctct-inline-form .ctct-form-embed .ctct-form-defaults input {
+    max-width: 100%; }
+#home-secondary-container .privacy-policy {
+  font-size: 0.8rem;
+  color: #fff;
+  opacity: 0.75; }
 
 #home-desktop-map-container {
   background: #9e524c;
