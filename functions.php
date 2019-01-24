@@ -337,16 +337,10 @@ function get_amtrak_link() {
 
 function get_map_name( $route_id ) {
 	if ($short = get_post_meta($route_id, 'route_short_name', true) ) {
-		$s_2_name = array(
-			'1'	=> 'Route 1 Boulder',
-			'11' => 'Route 11',
-			'3' => 'Route 3',
-			'2' => 'Route 2',
-			'4' => 'Route 4',
-			'Big Bear OTM' => 'BB OTM',
-			'RIM OTM' => 'RIM Off'
-		);
-		return $s_2_name[$short];
+		if ($short == '1') {
+			return 'Route 1 Boulder';
+		}
+		return 'Route ' . $short;
 	} else {
 		return get_post_meta($route_id, 'route_long_name', true);
 	}
@@ -452,14 +446,14 @@ function marta_get_imap_name( $shortname ) {
 		$s_2_name = array(
 			'1'	=> 'route_1',
 			'11' => 'route_11',
-      '13' => 'route_13',
+      		'13' => 'route_13',
 			'3' => 'route_3',
 			'2' => 'route_2',
 			'4' => 'route_4',
 			'5' => 'big_bear_otm',
 			'6' => 'rim_otm'
 		);
-		return $s_2_name[$shortname];
+		return $s_2_name[ trim($shortname) ];
 	}
 	return '';
 }
