@@ -340,7 +340,7 @@ function get_map_name( $route_id ) {
 		if ($short == '1') {
 			return 'Route 1 Boulder';
 		}
-		return 'Route ' . $short;
+		return $short;
 	} else {
 		return get_post_meta($route_id, 'route_long_name', true);
 	}
