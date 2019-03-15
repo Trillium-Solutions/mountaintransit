@@ -2914,6 +2914,7 @@ input.error {
       height: 180px; }
   #home-news-area h3 {
     font-weight: 400;
+    text-align: center;
     font-size: 1.25rem;
     line-height: 1.1;
     margin: 0;
