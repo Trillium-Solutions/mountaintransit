@@ -62,7 +62,8 @@
 					if ( has_post_thumbnail() ) {
 						$background = 'style="background-image: url(' . get_the_post_thumbnail_url(null,'medium') . ')" ';
 					} ?>
-					<a class="news-card" href="<?php the_permalink(); ?>" <?php echo $background; ?> >
+					<a class="news-card" href="<?php the_permalink(); ?>" >
+						<div class="card-image" <?php echo $background; ?>></div>
 						<h3><?php the_title(); ?><span class="date"><?php the_time('F j, Y')?></span></h3>
 					</a>
 				<?php endwhile; wp_reset_postdata(); ?>
