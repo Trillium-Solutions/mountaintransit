@@ -2904,9 +2904,9 @@ input.error {
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    border: 1px solid #af0f0f; }
+    border: 1px solid #af0f0f;
+    background: #950b0e; }
     #home-news-area .news-card .card-image {
-      background: #950b0e;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
