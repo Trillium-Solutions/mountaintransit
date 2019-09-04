@@ -8,6 +8,7 @@
 	<div id="planner-body" class="clear">
 		<form name="f" action="https://jump.trilliumtransit.com/redirect.php">
             <input type="hidden" name="sort" value="walk"/>
+            <input type="hidden" name="agency" value="44"/>
 			<div class="form-row">
                 <div class="err-msg" tabindex="-1">Please enter a valid starting address.</div>
 				<label for="saddr">From</label>
