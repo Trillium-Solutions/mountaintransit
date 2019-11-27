@@ -45,5 +45,6 @@
 			</div>
 
 			<button type="submit" class="btn btn-default">Get Directions</button>
+			<a href= "https://trilliumtransit.com/trip-planner-privacy-policy/" class='policy-link'> Privacy Policy</a>
 		</form>
 	</div>

@@ -336,6 +336,7 @@ input.error {
 			border: inset 2px darken(#af0f0f, 2%);
 		}
 	}
+
 	#ftime, #fdate {
 		width: 120px;
 		text-align: center;
@@ -345,6 +346,7 @@ input.error {
 		margin-right: 12px;
 	}
 }
+
 
 .crosshair-icon, .switch-icon {
 	border: none;
@@ -501,3 +503,8 @@ input.error {
 g#background .cls-2 {
 	fill: #DDCFC5;
 }
+.policy-link {
+	font-size: 12px;
+	color: white;
+}
+
